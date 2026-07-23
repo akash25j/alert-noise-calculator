@@ -89,14 +89,54 @@
       .nav-links a:not(.nav-cta){display:none}.hero{padding:68px 0}.proof-grid,.cards,.business,.landscape,.controls,.focus{grid-template-columns:1fr}
       .proof-item{border-right:0;border-bottom:1px solid var(--line)}section{padding:64px 0}.detail{grid-template-columns:1fr}.footer{display:block}.footer div+div{margin-top:8px}
     }
-  </style>
+  
+/* Event Noise & Cost Assessment */
+.assessment-section{background:linear-gradient(180deg,#f7f9fc,#eef3f8)}
+.assessment-shell{display:grid;grid-template-columns:.88fr 1.12fr;gap:18px;align-items:start}
+.assessment-panel,.results-panel{background:#fff;border:1px solid var(--line);border-radius:20px;box-shadow:0 18px 45px rgba(7,17,31,.08)}
+.assessment-panel{padding:23px;position:sticky;top:92px}
+.results-panel{padding:23px}
+.assessment-panel h3,.results-panel h3{margin:0 0 7px;font-size:21px}
+.panel-intro{color:var(--muted);font-size:13px;line-height:1.55;margin:0 0 20px}
+.input-grid{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+.field{display:flex;flex-direction:column;gap:7px}
+.field.full{grid-column:1/-1}
+.field label{font-size:11px;font-weight:850;color:#35455d;text-transform:uppercase;letter-spacing:.045em}
+.field input,.field select{width:100%;border:1px solid #cfd9e6;border-radius:10px;padding:12px 12px;background:#fff;color:var(--ink);font:inherit;font-size:14px;outline:none}
+.field input:focus,.field select:focus{border-color:#7194ef;box-shadow:0 0 0 4px rgba(77,124,255,.09)}
+.field small{font-size:10px;color:#8190a5;line-height:1.35}
+.assessment-actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:18px}
+.assessment-actions button{border:0;border-radius:10px;padding:12px 14px;font-weight:850;cursor:pointer;font-size:12px}
+.run-btn{background:linear-gradient(135deg,var(--blue),#6b5cff);color:#fff}
+.reset-btn{background:#edf2f8;color:#304058}
+.export-btn{background:#102746;color:#fff}
+.result-banner{display:grid;grid-template-columns:1fr auto;gap:15px;align-items:center;padding:17px;border-radius:15px;background:linear-gradient(135deg,#0d213d,#17365f);color:#fff;margin-bottom:16px}
+.result-banner small{display:block;color:#96afd3;text-transform:uppercase;font-size:10px;font-weight:900;letter-spacing:.08em;margin-bottom:6px}
+.result-banner strong{font-size:27px;letter-spacing:-.025em}
+.risk-badge{padding:8px 11px;border-radius:999px;font-size:11px;font-weight:900;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.13)}
+.metric-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:16px}
+.calc-metric{padding:15px;border:1px solid var(--line);border-radius:13px;background:#f9fbfd}
+.calc-metric small{display:block;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;font-size:9px;font-weight:850;margin-bottom:7px}
+.calc-metric strong{display:block;font-size:22px;letter-spacing:-.025em}.calc-metric span{font-size:10px;color:#7a899d}
+.chart-box{border:1px solid var(--line);border-radius:14px;padding:16px;margin-bottom:16px}
+.chart-box h4{font-size:13px;margin:0 0 13px}
+.bar-row{display:grid;grid-template-columns:145px 1fr 70px;gap:10px;align-items:center;margin:10px 0}
+.bar-label{font-size:11px;color:#47566b}.bar-track{height:11px;background:#e8eef5;border-radius:999px;overflow:hidden}.bar-fill{height:100%;border-radius:999px;background:linear-gradient(90deg,var(--blue),var(--cyan));width:0;transition:.45s ease}.bar-value{text-align:right;font-size:11px;font-weight:850}
+.recommendations{display:grid;gap:10px}
+.rec{border:1px solid var(--line);border-left:4px solid var(--blue);border-radius:12px;padding:13px 14px;background:#fff}
+.rec b{display:block;font-size:12px;margin-bottom:5px}.rec p{margin:0;color:var(--muted);font-size:11px;line-height:1.5}
+.disclaimer{font-size:10px;color:#8997aa;line-height:1.45;margin-top:13px}
+@media(max-width:900px){.assessment-shell{grid-template-columns:1fr}.assessment-panel{position:static}.metric-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.input-grid,.metric-grid{grid-template-columns:1fr}.bar-row{grid-template-columns:105px 1fr 55px}.result-banner{grid-template-columns:1fr}.risk-badge{justify-self:start}}
+
+</style>
 </head>
 <body>
 <nav>
   <div class="wrap nav-inner">
     <a class="brand" href="#top">AKASH JAIN<span>.TECH</span></a>
     <div class="nav-links">
-      <a href="#framework">Framework</a><a href="#tools">Tools</a><a href="#evidence">Evidence</a><a href="#about">About</a>
+      <a href="#framework">Framework</a><a href="#event-noise-assessment">Assessment</a><a href="#evidence">Evidence</a><a href="#about">About</a>
       <a class="nav-cta" href="https://www.linkedin.com/in/akash25j" target="_blank" rel="noopener">Connect on LinkedIn</a>
     </div>
   </div>
@@ -176,17 +216,77 @@
   </div>
 </section>
 
-<section class="tool-section" id="tools">
+
+<section class="assessment-section" id="event-noise-assessment">
   <div class="wrap">
-    <div class="section-head"><span class="section-label">Decision tools</span><h2>Start with the operational decision you need to make.</h2><p>The studio will grow into a consistent suite of assessments for cost, risk, stability and resilience.</p></div>
-    <div class="cards">
-      <article class="card"><span class="card-tag">Available next</span><h3>Event Noise & Cost</h3><p>Quantify avoidable alert handling, L1 capacity and governed automation opportunity.</p><a href="#">Assessment coming into v2 →</a></article>
-      <article class="card"><span class="card-tag">Planned</span><h3>Incident & MTTR</h3><p>Model customer impact and identify where detection, diagnosis or recovery is failing.</p><a href="#">Framework preview →</a></article>
-      <article class="card"><span class="card-tag">Planned</span><h3>Change Risk</h3><p>Assess validation, implementation discipline, rollback readiness and governance quality.</p><a href="#">Framework preview →</a></article>
-      <article class="card"><span class="card-tag">Planned</span><h3>Resilience Readiness</h3><p>Test recoverability, dependency awareness and confidence against business tolerances.</p><a href="#">Framework preview →</a></article>
+    <div class="section-head">
+      <span class="section-label">Working assessment 01</span>
+      <h2>Event Noise & Operational Cost Assessment</h2>
+      <p>Translate monitoring volume into engineering effort, annual cost and a governed automation opportunity. The model is designed for executive prioritisation—not as a substitute for detailed service analysis.</p>
+    </div>
+
+    <div class="assessment-shell">
+      <form class="assessment-panel" id="noise-form">
+        <h3>Operating inputs</h3>
+        <p class="panel-intro">Use a representative production week. Default values illustrate a large regulated technology estate.</p>
+        <div class="input-grid">
+          <div class="field"><label for="events">Weekly events</label><input id="events" type="number" min="0" value="3500"><small>Total events presented to operations.</small></div>
+          <div class="field"><label for="actionable">Actionable events %</label><input id="actionable" type="number" min="0" max="100" value="30"><small>Events requiring genuine investigation or action.</small></div>
+          <div class="field"><label for="minutes">Handling minutes</label><input id="minutes" type="number" min="0" step="0.1" value="8"><small>Average human handling time per presented event.</small></div>
+          <div class="field"><label for="rate">Loaded hourly cost</label><input id="rate" type="number" min="0" value="35"><small>Fully loaded operations cost in USD.</small></div>
+          <div class="field"><label for="automation">Automation potential %</label><input id="automation" type="number" min="0" max="100" value="55"><small>Share of non-actionable events that can be safely suppressed or automated.</small></div>
+          <div class="field"><label for="weeks">Operating weeks</label><input id="weeks" type="number" min="1" max="52" value="50"><small>Annual operating weeks used in the model.</small></div>
+          <div class="field full"><label for="criticality">Service criticality</label><select id="criticality"><option value="1">Standard enterprise service</option><option value="1.2" selected>Important business service</option><option value="1.5">Critical customer-facing service</option></select><small>Applies a prioritisation weighting to the overall opportunity score.</small></div>
+        </div>
+        <div class="assessment-actions">
+          <button class="run-btn" type="submit">Calculate opportunity</button>
+          <button class="reset-btn" type="button" id="noise-reset">Reset</button>
+          <button class="export-btn" type="button" id="noise-export">Download summary</button>
+        </div>
+      </form>
+
+      <div class="results-panel">
+        <div class="result-banner">
+          <div><small>Executive opportunity score</small><strong id="score">72 / 100</strong></div>
+          <span class="risk-badge" id="priority">High-priority intervention</span>
+        </div>
+
+        <div class="metric-grid">
+          <div class="calc-metric"><small>Noise volume</small><strong id="noise-volume">2,450</strong><span>events per week</span></div>
+          <div class="calc-metric"><small>Annual effort</small><strong id="annual-hours">16,333</strong><span>human hours</span></div>
+          <div class="calc-metric"><small>Annual handling cost</small><strong id="annual-cost">$571,667</strong><span>before optimisation</span></div>
+          <div class="calc-metric"><small>Addressable events</small><strong id="addressable-events">1,348</strong><span>per week</span></div>
+          <div class="calc-metric"><small>Capacity recovery</small><strong id="recovered-hours">8,983</strong><span>hours annually</span></div>
+          <div class="calc-metric"><small>Potential value</small><strong id="savings">$314,417</strong><span>annual cost capacity</span></div>
+        </div>
+
+        <div class="chart-box">
+          <h4>Current-state event composition</h4>
+          <div class="bar-row"><span class="bar-label">Actionable</span><div class="bar-track"><div class="bar-fill" id="bar-actionable"></div></div><span class="bar-value" id="bar-actionable-value">30%</span></div>
+          <div class="bar-row"><span class="bar-label">Noise</span><div class="bar-track"><div class="bar-fill" id="bar-noise"></div></div><span class="bar-value" id="bar-noise-value">70%</span></div>
+          <div class="bar-row"><span class="bar-label">Addressable now</span><div class="bar-track"><div class="bar-fill" id="bar-addressable"></div></div><span class="bar-value" id="bar-addressable-value">39%</span></div>
+        </div>
+
+        <div class="recommendations" id="recommendations"></div>
+        <p class="disclaimer">Illustrative model. Validate event classifications, labour assumptions, service risk and automation controls before using outputs for investment decisions.</p>
+      </div>
     </div>
   </div>
 </section>
+
+
+<section class="tool-section" id="tools">
+  <div class="wrap">
+    <div class="section-head"><span class="section-label">Assessment roadmap</span><h2>A growing executive diagnostic suite.</h2><p>Each module will use the same evidence-led design, decision outputs and exportable executive summary.</p></div>
+    <div class="cards">
+      <article class="card"><span class="card-tag">Live</span><h3>Event Noise & Cost</h3><p>Quantify alert demand, annual cost and governed optimisation potential.</p><a href="#event-noise-assessment">Run assessment →</a></article>
+      <article class="card"><span class="card-tag">Next</span><h3>Incident & MTTR</h3><p>Model customer impact and isolate detection, diagnosis and recovery constraints.</p><a href="#event-noise-assessment">Coming next →</a></article>
+      <article class="card"><span class="card-tag">Planned</span><h3>Change Risk</h3><p>Assess production validation, rollback readiness and governance quality.</p><a href="#event-noise-assessment">View roadmap →</a></article>
+      <article class="card"><span class="card-tag">Planned</span><h3>Resilience Readiness</h3><p>Test recoverability, dependency awareness and confidence against tolerances.</p><a href="#event-noise-assessment">View roadmap →</a></article>
+    </div>
+  </div>
+</section>
+
 
 <section class="evidence" id="evidence">
   <div class="wrap">
@@ -225,6 +325,113 @@
     title.textContent='Customer journeys';text.textContent=nodes[0].dataset.detail;
   });
 })();
+</script>
+<script>
+
+(function(){
+  const form=document.getElementById('noise-form');
+  if(!form) return;
+  const $=id=>document.getElementById(id);
+  const fmt=n=>Math.round(n).toLocaleString('en-US');
+  const money=n=>'$'+Math.round(n).toLocaleString('en-US');
+  const defaults={events:3500,actionable:30,minutes:8,rate:35,automation:55,weeks:50,criticality:'1.2'};
+
+  function calculate(){
+    const events=Math.max(0,+$('events').value||0);
+    const actionable=Math.min(100,Math.max(0,+$('actionable').value||0));
+    const minutes=Math.max(0,+$('minutes').value||0);
+    const rate=Math.max(0,+$('rate').value||0);
+    const automation=Math.min(100,Math.max(0,+$('automation').value||0));
+    const weeks=Math.min(52,Math.max(1,+$('weeks').value||50));
+    const criticality=+$('criticality').value||1;
+
+    const noisePct=100-actionable;
+    const noiseEvents=events*(noisePct/100);
+    const annualHours=events*minutes/60*weeks;
+    const annualCost=annualHours*rate;
+    const addressableEvents=noiseEvents*(automation/100);
+    const recoveredHours=addressableEvents*minutes/60*weeks;
+    const savings=recoveredHours*rate;
+    const addressablePct=events?addressableEvents/events*100:0;
+
+    let score=(noisePct*.42)+(automation*.28)+(Math.min(100,events/50)*.18)+(Math.min(100,minutes*5)*.12);
+    score=Math.min(100,Math.round(score*criticality));
+
+    $('noise-volume').textContent=fmt(noiseEvents);
+    $('annual-hours').textContent=fmt(annualHours);
+    $('annual-cost').textContent=money(annualCost);
+    $('addressable-events').textContent=fmt(addressableEvents);
+    $('recovered-hours').textContent=fmt(recoveredHours);
+    $('savings').textContent=money(savings);
+    $('score').textContent=score+' / 100';
+    $('bar-actionable').style.width=actionable+'%';
+    $('bar-noise').style.width=noisePct+'%';
+    $('bar-addressable').style.width=addressablePct+'%';
+    $('bar-actionable-value').textContent=Math.round(actionable)+'%';
+    $('bar-noise-value').textContent=Math.round(noisePct)+'%';
+    $('bar-addressable-value').textContent=Math.round(addressablePct)+'%';
+
+    let priority='Targeted optimisation';
+    if(score>=75) priority='Immediate executive priority';
+    else if(score>=55) priority='High-priority intervention';
+    else if(score<35) priority='Monitor and improve selectively';
+    $('priority').textContent=priority;
+
+    const recs=[];
+    if(noisePct>=60) recs.push(['Create an event rationalisation backlog','Start with top-volume sources, duplicate symptoms, non-actionable thresholds and events with no named response.']);
+    if(automation>=40) recs.push(['Apply governed suppression and automation','Require ownership, expiry, audit evidence, exception paths and rollback for every automated action.']);
+    if(minutes>=10) recs.push(['Reduce diagnostic effort','Improve event enrichment with business service, dependency, recent-change and runbook context.']);
+    if(actionable<25) recs.push(['Challenge monitoring design','A low actionable ratio often indicates threshold-led monitoring rather than service- and customer-impact-led observability.']);
+    if(criticality>=1.5) recs.push(['Protect critical-service controls','Do not optimise purely for volume. Retain independent detection paths and test failure-mode coverage before suppression.']);
+    if(!recs.length) recs.push(['Maintain control discipline','The opportunity is moderate. Prioritise quality, ownership and continuous review over broad suppression.']);
+    $('recommendations').innerHTML=recs.slice(0,4).map(r=>`<article class="rec"><b>${r[0]}</b><p>${r[1]}</p></article>`).join('');
+
+    return {events,actionable,minutes,rate,automation,weeks,noiseEvents,annualHours,annualCost,addressableEvents,recoveredHours,savings,score,priority,recs};
+  }
+
+  form.addEventListener('submit',e=>{e.preventDefault();calculate();});
+  [...form.querySelectorAll('input,select')].forEach(el=>el.addEventListener('input',calculate));
+  $('noise-reset').addEventListener('click',()=>{
+    Object.entries(defaults).forEach(([k,v])=>$(k).value=v);calculate();
+  });
+  $('noise-export').addEventListener('click',()=>{
+    const r=calculate();
+    const lines=[
+      'OPERATIONAL RESILIENCE STUDIO',
+      'Event Noise & Operational Cost Assessment',
+      'Generated from akashjain.tech',
+      '',
+      `Executive opportunity score: ${r.score}/100`,
+      `Priority: ${r.priority}`,
+      '',
+      'INPUTS',
+      `Weekly events: ${fmt(r.events)}`,
+      `Actionable events: ${r.actionable}%`,
+      `Average handling time: ${r.minutes} minutes`,
+      `Loaded hourly cost: $${r.rate}`,
+      `Automation potential: ${r.automation}%`,
+      `Operating weeks: ${r.weeks}`,
+      '',
+      'OUTPUTS',
+      `Noise volume: ${fmt(r.noiseEvents)} events/week`,
+      `Annual handling effort: ${fmt(r.annualHours)} hours`,
+      `Annual handling cost: ${money(r.annualCost)}`,
+      `Addressable events: ${fmt(r.addressableEvents)} events/week`,
+      `Potential capacity recovery: ${fmt(r.recoveredHours)} hours/year`,
+      `Potential annual value: ${money(r.savings)}`,
+      '',
+      'RECOMMENDATIONS',
+      ...r.recs.slice(0,4).map((x,i)=>`${i+1}. ${x[0]} — ${x[1]}`),
+      '',
+      'Note: Illustrative model. Validate classifications, cost assumptions and control requirements.'
+    ];
+    const blob=new Blob([lines.join('\n')],{type:'text/plain;charset=utf-8'});
+    const a=document.createElement('a');a.href=URL.createObjectURL(blob);
+    a.download='event-noise-assessment-summary.txt';a.click();URL.revokeObjectURL(a.href);
+  });
+  calculate();
+})();
+
 </script>
 </body>
 </html>
