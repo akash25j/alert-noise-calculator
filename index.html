@@ -129,6 +129,26 @@
 @media(max-width:900px){.assessment-shell{grid-template-columns:1fr}.assessment-panel{position:static}.metric-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:560px){.input-grid,.metric-grid{grid-template-columns:1fr}.bar-row{grid-template-columns:105px 1fr 55px}.result-banner{grid-template-columns:1fr}.risk-badge{justify-self:start}}
 
+
+/* Incident & MTTR Assessment */
+.incident-section{background:#fff}
+.incident-shell{display:grid;grid-template-columns:.88fr 1.12fr;gap:18px;align-items:start}
+.incident-panel,.incident-results{background:#fff;border:1px solid var(--line);border-radius:20px;box-shadow:0 18px 45px rgba(7,17,31,.08)}
+.incident-panel{padding:23px;position:sticky;top:92px}.incident-results{padding:23px}
+.incident-panel h3,.incident-results h3{margin:0 0 7px;font-size:21px}
+.stage-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:16px}
+.stage{border:1px solid var(--line);border-radius:13px;padding:14px;background:#f9fbfd}
+.stage small{display:block;color:var(--muted);font-size:9px;font-weight:850;text-transform:uppercase;letter-spacing:.05em;margin-bottom:7px}
+.stage strong{font-size:20px}.stage span{display:block;color:#7a899d;font-size:10px;margin-top:4px}
+.timeline{border:1px solid var(--line);border-radius:14px;padding:16px;margin-bottom:16px}
+.timeline h4{font-size:13px;margin:0 0 14px}.timeline-track{display:flex;height:18px;border-radius:999px;overflow:hidden;background:#edf2f7}
+.timeline-part{height:100%;min-width:2px;transition:.4s ease}.detect{background:#4d7cff}.engage{background:#6b5cff}.diagnose{background:#2bd5c4}.recover{background:#1cad75}
+.timeline-legend{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:12px}.timeline-legend span{font-size:10px;color:var(--muted)}.timeline-legend b{display:block;color:var(--ink);font-size:11px;margin-bottom:2px}
+.impact-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:16px}
+.impact-box{border-radius:13px;padding:15px;background:#102746;color:#fff}.impact-box small{display:block;color:#9eb3d0;text-transform:uppercase;font-size:9px;font-weight:850;letter-spacing:.05em;margin-bottom:7px}.impact-box strong{display:block;font-size:21px}.impact-box span{font-size:10px;color:#bdcbe0}
+@media(max-width:900px){.incident-shell{grid-template-columns:1fr}.incident-panel{position:static}.stage-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.stage-grid,.impact-strip,.timeline-legend{grid-template-columns:1fr}.timeline-track{height:28px}}
+
 </style>
 </head>
 <body>
@@ -136,7 +156,7 @@
   <div class="wrap nav-inner">
     <a class="brand" href="#top">AKASH JAIN<span>.TECH</span></a>
     <div class="nav-links">
-      <a href="#framework">Framework</a><a href="#event-noise-assessment">Assessment</a><a href="#evidence">Evidence</a><a href="#about">About</a>
+      <a href="#framework">Framework</a><a href="#event-noise-assessment">Assessments</a><a href="#incident-mttr-assessment">MTTR</a><a href="#evidence">Evidence</a><a href="#about">About</a>
       <a class="nav-cta" href="https://www.linkedin.com/in/akash25j" target="_blank" rel="noopener">Connect on LinkedIn</a>
     </div>
   </div>
@@ -275,12 +295,54 @@
 </section>
 
 
+
+<section class="incident-section" id="incident-mttr-assessment">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-label">Working assessment 02</span>
+      <h2>Incident Impact & MTTR Assessment</h2>
+      <p>Break mean time to restore into detection, engagement, diagnosis and recovery. Quantify customer exposure and identify the operating constraint that should receive executive attention first.</p>
+    </div>
+    <div class="incident-shell">
+      <form class="incident-panel" id="mttr-form">
+        <h3>Incident inputs</h3>
+        <p class="panel-intro">Use a representative major incident or the average of a consistent incident cohort.</p>
+        <div class="input-grid">
+          <div class="field"><label for="detect-min">Detection time</label><input id="detect-min" type="number" min="0" value="15"><small>Minutes before impact is reliably detected.</small></div>
+          <div class="field"><label for="engage-min">Engagement time</label><input id="engage-min" type="number" min="0" value="12"><small>Minutes to mobilise accountable responders.</small></div>
+          <div class="field"><label for="diagnose-min">Diagnosis time</label><input id="diagnose-min" type="number" min="0" value="38"><small>Minutes to isolate the fault and choose action.</small></div>
+          <div class="field"><label for="recover-min">Recovery time</label><input id="recover-min" type="number" min="0" value="25"><small>Minutes to restore and validate service.</small></div>
+          <div class="field"><label for="customers-hour">Customers exposed/hour</label><input id="customers-hour" type="number" min="0" value="7000"><small>Estimated customers attempting the affected journey.</small></div>
+          <div class="field"><label for="incidents-year">Major incidents/year</label><input id="incidents-year" type="number" min="0" value="18"><small>Comparable high-impact incidents annually.</small></div>
+          <div class="field"><label for="value-hour">Business value/hour</label><input id="value-hour" type="number" min="0" value="50000"><small>Indicative value, cost or exposure per disrupted hour in USD.</small></div>
+          <div class="field"><label for="target-mttr">Target MTTR</label><input id="target-mttr" type="number" min="1" value="60"><small>Executive restoration objective in minutes.</small></div>
+          <div class="field full"><label for="mttr-criticality">Service criticality</label><select id="mttr-criticality"><option value="1">Standard enterprise service</option><option value="1.2" selected>Important business service</option><option value="1.5">Critical customer-facing service</option></select><small>Weights the intervention score without changing core impact estimates.</small></div>
+        </div>
+        <div class="assessment-actions"><button class="run-btn" type="submit">Analyse incident</button><button class="reset-btn" type="button" id="mttr-reset">Reset</button><button class="export-btn" type="button" id="mttr-export">Download summary</button></div>
+      </form>
+      <div class="incident-results">
+        <div class="result-banner"><div><small>MTTR control score</small><strong id="mttr-score">68 / 100</strong></div><span class="risk-badge" id="mttr-priority">High-priority intervention</span></div>
+        <div class="stage-grid">
+          <div class="stage"><small>Total MTTR</small><strong id="total-mttr">90 min</strong><span id="target-gap">30 min above target</span></div>
+          <div class="stage"><small>Primary constraint</small><strong id="constraint">Diagnosis</strong><span id="constraint-share">42% of MTTR</span></div>
+          <div class="stage"><small>Customers exposed</small><strong id="customers-exposed">10,500</strong><span>per representative incident</span></div>
+          <div class="stage"><small>Annual exposure</small><strong id="annual-exposure">189,000</strong><span>customer attempts affected</span></div>
+        </div>
+        <div class="timeline"><h4>Restoration timeline</h4><div class="timeline-track"><div class="timeline-part detect" id="seg-detect"></div><div class="timeline-part engage" id="seg-engage"></div><div class="timeline-part diagnose" id="seg-diagnose"></div><div class="timeline-part recover" id="seg-recover"></div></div><div class="timeline-legend"><span><b>Detect</b><i id="leg-detect">15 min</i></span><span><b>Engage</b><i id="leg-engage">12 min</i></span><span><b>Diagnose</b><i id="leg-diagnose">38 min</i></span><span><b>Recover</b><i id="leg-recover">25 min</i></span></div></div>
+        <div class="impact-strip"><div class="impact-box"><small>Value exposure/incident</small><strong id="value-incident">$75,000</strong><span>illustrative business exposure</span></div><div class="impact-box"><small>Annual value exposure</small><strong id="value-annual">$1,350,000</strong><span>across incident cohort</span></div><div class="impact-box"><small>Target improvement</small><strong id="improvement">33%</strong><span>MTTR reduction required</span></div></div>
+        <div class="recommendations" id="mttr-recommendations"></div>
+        <p class="disclaimer">Illustrative model. Customer and value exposure should be validated against journey volumes, incident records and finance-approved assumptions.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="tool-section" id="tools">
   <div class="wrap">
     <div class="section-head"><span class="section-label">Assessment roadmap</span><h2>A growing executive diagnostic suite.</h2><p>Each module will use the same evidence-led design, decision outputs and exportable executive summary.</p></div>
     <div class="cards">
       <article class="card"><span class="card-tag">Live</span><h3>Event Noise & Cost</h3><p>Quantify alert demand, annual cost and governed optimisation potential.</p><a href="#event-noise-assessment">Run assessment →</a></article>
-      <article class="card"><span class="card-tag">Next</span><h3>Incident & MTTR</h3><p>Model customer impact and isolate detection, diagnosis and recovery constraints.</p><a href="#event-noise-assessment">Coming next →</a></article>
+      <article class="card"><span class="card-tag">Live</span><h3>Incident & MTTR</h3><p>Model customer impact and isolate detection, engagement, diagnosis and recovery constraints.</p><a href="#incident-mttr-assessment">Run assessment →</a></article>
       <article class="card"><span class="card-tag">Planned</span><h3>Change Risk</h3><p>Assess production validation, rollback readiness and governance quality.</p><a href="#event-noise-assessment">View roadmap →</a></article>
       <article class="card"><span class="card-tag">Planned</span><h3>Resilience Readiness</h3><p>Test recoverability, dependency awareness and confidence against tolerances.</p><a href="#event-noise-assessment">View roadmap →</a></article>
     </div>
@@ -433,5 +495,37 @@
 })();
 
 </script>
+
+<script>
+(function(){
+  const form=document.getElementById('mttr-form'); if(!form) return;
+  const $=id=>document.getElementById(id), fmt=n=>Math.round(n).toLocaleString('en-US'), money=n=>'$'+Math.round(n).toLocaleString('en-US');
+  const defaults={'detect-min':15,'engage-min':12,'diagnose-min':38,'recover-min':25,'customers-hour':7000,'incidents-year':18,'value-hour':50000,'target-mttr':60,'mttr-criticality':'1.2'};
+  function calc(){
+    const stages=[['Detection',Math.max(0,+$('detect-min').value||0)],['Engagement',Math.max(0,+$('engage-min').value||0)],['Diagnosis',Math.max(0,+$('diagnose-min').value||0)],['Recovery',Math.max(0,+$('recover-min').value||0)]];
+    const total=stages.reduce((s,x)=>s+x[1],0), target=Math.max(1,+$('target-mttr').value||60), customersHour=Math.max(0,+$('customers-hour').value||0), incidents=Math.max(0,+$('incidents-year').value||0), valueHour=Math.max(0,+$('value-hour').value||0), criticality=+$('mttr-criticality').value||1;
+    const max=stages.reduce((a,b)=>a[1]>=b[1]?a:b), exposed=customersHour*total/60, annual=exposed*incidents, valueIncident=valueHour*total/60, valueAnnual=valueIncident*incidents, improvement=Math.max(0,(total-target)/Math.max(total,1)*100);
+    let score=Math.min(100,Math.round(((Math.min(100,total/1.5)*.45)+(Math.min(100,improvement*2)*.3)+(Math.min(100,incidents*4)*.15)+(Math.min(100,customersHour/100)*.1))*criticality));
+    $('total-mttr').textContent=fmt(total)+' min'; $('target-gap').textContent=total>target?fmt(total-target)+' min above target':fmt(target-total)+' min within target'; $('constraint').textContent=max[0]; $('constraint-share').textContent=Math.round(max[1]/Math.max(total,1)*100)+'% of MTTR'; $('customers-exposed').textContent=fmt(exposed); $('annual-exposure').textContent=fmt(annual); $('value-incident').textContent=money(valueIncident); $('value-annual').textContent=money(valueAnnual); $('improvement').textContent=Math.round(improvement)+'%'; $('mttr-score').textContent=score+' / 100';
+    const ids=['detect','engage','diagnose','recover']; stages.forEach((s,i)=>{$('seg-'+ids[i]).style.width=(s[1]/Math.max(total,1)*100)+'%'; $('leg-'+ids[i]).textContent=fmt(s[1])+' min';});
+    let priority='Targeted improvement'; if(score>=75) priority='Immediate executive priority'; else if(score>=55) priority='High-priority intervention'; else if(score<35) priority='Controlled performance'; $('mttr-priority').textContent=priority;
+    const recs=[];
+    if(max[0]==='Detection') recs.push(['Strengthen impact-led detection','Connect telemetry to business-service and customer-journey signals, then measure time from impact start—not ticket creation.']);
+    if(max[0]==='Engagement') recs.push(['Reduce mobilisation delay','Clarify service ownership, automate paging and use role-based incident bridges with explicit acknowledgement targets.']);
+    if(max[0]==='Diagnosis') recs.push(['Accelerate fault isolation','Add dependency context, recent-change data, known-error patterns and hypothesis-led technical workstreams to the incident command model.']);
+    if(max[0]==='Recovery') recs.push(['Engineer faster recovery','Prioritise reversible remediation, tested rollback, traffic switching and automated validation for the highest-impact failure modes.']);
+    if(total>target) recs.push(['Govern the MTTR target by stage','Set separate objectives for detection, engagement, diagnosis and recovery so the aggregate target becomes operationally actionable.']);
+    if(incidents>=12) recs.push(['Link incident learning to problem removal','Use recurrence and customer exposure—not ticket count—to rank structural remediation and engineering investment.']);
+    if(!recs.length) recs.push(['Maintain control discipline','Performance is within target. Continue scenario testing, stage-level measurement and learning reviews to protect the current position.']);
+    $('mttr-recommendations').innerHTML=recs.slice(0,4).map(r=>`<article class="rec"><b>${r[0]}</b><p>${r[1]}</p></article>`).join('');
+    return {stages,total,target,customersHour,incidents,valueHour,exposed,annual,valueIncident,valueAnnual,improvement,score,priority,recs,max};
+  }
+  form.addEventListener('submit',e=>{e.preventDefault();calc()}); [...form.querySelectorAll('input,select')].forEach(el=>el.addEventListener('input',calc));
+  $('mttr-reset').addEventListener('click',()=>{Object.entries(defaults).forEach(([k,v])=>$(k).value=v);calc()});
+  $('mttr-export').addEventListener('click',()=>{const r=calc(), lines=['OPERATIONAL RESILIENCE STUDIO','Incident Impact & MTTR Assessment','Generated from akashjain.tech','',`MTTR control score: ${r.score}/100`,`Priority: ${r.priority}`,'','TIMELINE',...r.stages.map(x=>`${x[0]}: ${x[1]} minutes`),`Total MTTR: ${r.total} minutes`,`Target MTTR: ${r.target} minutes`,`Primary constraint: ${r.max[0]}`,'','IMPACT',`Customers exposed per incident: ${fmt(r.exposed)}`,`Annual customer exposure: ${fmt(r.annual)}`,`Value exposure per incident: ${money(r.valueIncident)}`,`Annual value exposure: ${money(r.valueAnnual)}`,'','RECOMMENDATIONS',...r.recs.slice(0,4).map((x,i)=>`${i+1}. ${x[0]} — ${x[1]}`),'','Note: Validate assumptions against incident, journey and finance data.']; const blob=new Blob([lines.join('\n')],{type:'text/plain;charset=utf-8'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='incident-mttr-assessment-summary.txt';a.click();URL.revokeObjectURL(a.href)});
+  calc();
+})();
+</script>
+
 </body>
 </html>
