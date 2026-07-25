@@ -473,13 +473,24 @@ html{scroll-behavior:smooth}
   .nav-links a:not(.nav-cta){display:none}
   .nav-cta{display:inline-flex}
 }
+
+.mobile-menu-button{display:none;background:transparent;border:1px solid rgba(255,255,255,.25);color:#fff;border-radius:9px;padding:8px 12px;font-weight:800}
+.example-banner{margin-bottom:16px;padding:12px 16px;border-radius:12px;background:#fff7d6;border:1px solid #ead27a;color:#5d4a00;font-size:13px;font-weight:800}
+.leadership-scope-section{padding:76px 0;background:#f6f8fb}
+.scope-highlight-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.scope-highlight-grid article,.career-timeline article{background:#fff;border:1px solid var(--line);border-radius:18px;padding:20px;box-shadow:0 14px 34px rgba(7,17,31,.06)}
+.scope-highlight-grid strong{display:block;font-size:26px;color:var(--navy)}.scope-highlight-grid span{display:block;font-weight:800;color:var(--cyan);margin:4px 0 10px}.scope-highlight-grid p,.career-timeline p{color:var(--muted);font-size:13px;line-height:1.55;margin:0}
+.career-timeline{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:18px}.career-timeline b{font-size:11px;color:var(--cyan);text-transform:uppercase}.career-timeline h3{margin:7px 0 8px;font-size:18px}
+.assessment-toggle{margin-top:14px;border:0;border-radius:10px;background:var(--cyan);color:#06233c;padding:11px 16px;font-weight:900;cursor:pointer}.assessment-collapsible.is-collapsed .assessment-body{display:none}.assessment-body{margin-top:22px}
+.metric-source{display:block!important;margin-top:14px;color:#6d7c90!important;font-size:10px!important;font-weight:700}
+@media(max-width:980px){.scope-highlight-grid{grid-template-columns:repeat(2,1fr)}.career-timeline{grid-template-columns:1fr}.mobile-menu-button{display:block}.nav-inner{position:relative}.nav-links{display:none;position:absolute;top:58px;left:16px;right:16px;flex-direction:column;align-items:stretch;background:#0c1b33;border:1px solid rgba(255,255,255,.15);padding:14px;border-radius:14px;box-shadow:0 18px 40px rgba(0,0,0,.25)}.nav-links.open{display:flex}.nav-links a:not(.nav-cta){display:block}.nav-cta{justify-content:center}}
+@media(max-width:620px){.scope-highlight-grid{grid-template-columns:1fr}}
 </style>
-<meta content="https://akashjain.tech/akash-jain-linkedin-preview.png" property="og:image"/><meta content="summary_large_image" name="twitter:card"/><meta content="Akash Jain | Technology Operations &amp; Service Delivery Leader" name="twitter:title"/><meta content="Executive leadership, quantified outcomes and operational resilience proof of work." name="twitter:description"/><meta content="https://akashjain.tech/akash-jain-linkedin-preview.png" name="twitter:image"/><link href="favicon.svg" rel="icon" type="image/svg+xml"/></head>
+<meta content="https://akashjain.tech/akash-jain-linkedin-preview.png" property="og:image"/><meta content="summary_large_image" name="twitter:card"/><meta content="Akash Jain | Technology Operations &amp; Service Delivery Leader" name="twitter:title"/><meta content="Executive leadership, quantified outcomes and operational resilience proof of work." name="twitter:description"/><meta content="https://akashjain.tech/akash-jain-linkedin-preview.png" name="twitter:image"/><link href="favicon.svg" rel="icon" type="image/svg+xml"/><script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Akash Jain","jobTitle":"Technology Operations and Service Delivery Leader","url":"https://akashjain.tech","sameAs":["https://www.linkedin.com/in/akash25j"],"email":"mailto:akash25j@gmail.com","address":{"@type":"PostalAddress","addressLocality":"Pune","addressCountry":"IN"},"knowsAbout":["Technology Operations","IT Service Management","Operational Resilience","Incident Management","Change Management","Production Services","Observability","AIOps"],"worksFor":{"@type":"Organization","name":"Barclays"}}</script></head>
 <body>
 <nav>
 <div class="wrap nav-inner">
-<a class="brand" href="#overview">AKASH JAIN<span>.TECH</span></a>
-<div class="nav-links">
+<button aria-controls="primary-navigation" aria-expanded="false" class="mobile-menu-button" id="mobile-menu-button" type="button">Menu</button><a class="brand" href="#overview">AKASH JAIN<span>.TECH</span></a>
+<div class="nav-links" id="primary-navigation">
 <a href="#overview">Overview</a>
 <a href="#evidence">Impact</a>
 <a href="#framework">Operating Model</a>
@@ -495,13 +506,9 @@ html{scroll-behavior:smooth}
 <div>
 <span class="eyebrow">Technology Operations &amp; Service Delivery Leader</span>
 <h1>Akash Jain</h1>
-<h2 class="hero-role">Building stable, resilient and measurable technology operations for critical banking services.</h2>
-<p>20+ years across software engineering, production operations and service leadership, including seven years at VP level in a Tier-1 global bank. I combine IT service management discipline with engineering, observability, automation and executive governance.</p>
-<div class="actions">
-<a class="btn-primary" href="#evidence">Review leadership outcomes</a>
-<a class="btn-secondary" download="" href="Akash_Jain_Resume.pdf">Download résumé</a>
-<a class="btn-secondary" href="https://www.linkedin.com/in/akash25j" rel="noopener" target="_blank">View LinkedIn</a>
-</div>
+<h2 class="hero-role">I redesign complex technology operating models to reduce disruption, operational demand and recovery risk—without defaulting to more headcount or vendor spend.</h2>
+<p>20+ years across software engineering, production operations and service leadership, including Vice President responsibility at Barclays since 2019. I combine IT service management discipline with engineering, observability, automation and executive governance.</p>
+<div class="actions"><a class="btn-primary" href="mailto:akash25j@gmail.com?subject=Technology%20Operations%20Leadership%20Opportunity">Discuss a leadership opportunity</a><a class="btn-secondary" download="" href="Akash_Jain_Resume.pdf">Download résumé</a><a class="btn-secondary" href="https://www.linkedin.com/in/akash25j" rel="noopener" target="_blank">View LinkedIn</a></div>
 <p class="hero-note">Target leadership scope: Technology Operations · IT Service Management · Production Services · Service Delivery · Operational Resilience</p>
 </div>
 <aside aria-label="Leadership profile" class="leadership-card">
@@ -509,7 +516,7 @@ html{scroll-behavior:smooth}
 <h3>Operational leadership at enterprise scale</h3>
 <div class="leadership-stat"><strong>20+</strong><span>years in technology and operations</span></div>
 <div class="leadership-stat"><strong>7</strong><span>years at VP level in global banking</span></div>
-<div class="leadership-stat"><strong>97%</strong><span>change success achieved from a 78% baseline</span></div>
+<div class="leadership-stat"><strong>10% → 1%</strong><span>failed-change rate reduced over three years</span></div>
 <div class="leadership-stat"><strong>75%</strong><span>reduction in customer-facing downtime during resilience events</span></div>
 <div class="leadership-card-footer">Proof of work below combines real leadership outcomes with transparent decision-support tools.</div>
 </aside>
@@ -519,9 +526,52 @@ html{scroll-behavior:smooth}
 <div class="wrap">
 <div class="proof-grid">
 <article class="proof-item"><strong>160,000</strong><span>customer experience hours recovered across eight resilience events</span></article>
-<article class="proof-item"><strong>550/week</strong><span>avoidable incidents removed through alert rationalisation and automation</span></article>
-<article class="proof-item"><strong>&lt;15 min</strong><span>issue detection enabled through improved observability and operating discipline</span></article>
-<article class="proof-item"><strong>Tier-1 bank</strong><span>regulated, customer-critical and globally distributed operating environment</span></article>
+<article class="proof-item"><strong>2,000/week</strong><span>monitoring events removed through threshold redesign and suppression discipline</span></article>
+<article class="proof-item"><strong>550/week</strong><span>incidents removed through self-healing and automation</span></article>
+<article class="proof-item"><strong>~10M</strong><span>customers served by the banking estate referenced in change and migration outcomes</span></article>
+</div>
+</div>
+</section><section class="leadership-scope-section" id="leadership-scope"><div class="wrap"><div class="section-head"><span class="section-label">Leadership scope</span><h2>Enterprise banking operations, engineering foundations and measurable transformation.</h2><p>Public career context and non-confidential scale indicators aligned with the downloadable résumé.</p></div><div class="scope-highlight-grid"><article><strong>Barclays</strong><span>Vice President, 2019–present</span><p>Technology service management across regulated, customer-critical banking services.</p></article><article><strong>~10 million</strong><span>customers served</span><p>Scale referenced across the change-governance estate and largest partner migration.</p></article><article><strong>50+ applications</strong><span>monitoring estate</span><p>Alert-threshold and suppression redesign across a broad application landscape.</p></article><article><strong>Cross-functional</strong><span>leadership model</span><p>Engineering, operations, business, suppliers and executive stakeholders.</p></article></div><div class="career-timeline"><article><b>2019–Present</b><h3>Vice President · Barclays</h3><p>Operational resilience, incident, problem, change, observability, production stability and service governance.</p></article><article><b>2009–2019</b><h3>Senior Manager · Cognizant</h3><p>End-to-end service management for a business-critical enterprise messaging platform.</p></article><article><b>2005–2009</b><h3>Senior Software Engineer · Infosys</h3><p>Platform migration, production rollout, offshore delivery and transition support.</p></article></div></div></section><section class="evidence" id="evidence">
+<div class="wrap">
+<div class="section-head">
+<span class="section-label">Selected leadership evidence</span>
+<h2>Transformation outcomes delivered at Barclays.</h2>
+<p>Non-confidential examples showing the operating problem, my leadership intervention, the sustained result and its business significance.</p>
+</div>
+<div class="evidence-grid expanded-cases">
+<article class="case">
+<small>Resilience engineering</small>
+<h3>Reduced customer-facing downtime by 75%</h3>
+<dl>
+<div><dt>Challenge</dt><dd>Sequential recovery created 3–4 hours of downtime across four to five critical customer-facing applications.</dd></div>
+<div><dt>Leadership intervention</dt><dd>Challenged the inherited execution model and led the design of parallel recovery, automated sequences and tighter technical proving.</dd></div>
+<div><dt>Sustained result</dt><dd>Reduced disruption to approximately 60 minutes across eight resilience events.</dd></div>
+<div><dt>Business impact</dt><dd>Protected roughly 20,000 customers per event and recovered approximately 160,000 customer experience hours cumulatively.</dd></div>
+</dl>
+<strong>75% less downtime</strong>
+<small class="metric-source">Source: internal operational measure; details aligned with résumé.</small></article>
+<article class="case">
+<small>Change leadership</small>
+<h3>Reduced failed changes from 10% to 1%</h3>
+<dl>
+<div><dt>Challenge</dt><dd>Production failures repeatedly traced to untested non-production environments, off-window deployments and weak rollback proving.</dd></div>
+<div><dt>Leadership intervention</dt><dd>Established evidence-led governance across testing, production proving, risk classification, rollback and failure learning.</dd></div>
+<div><dt>Sustained result</dt><dd>Reduced the failed-change rate from 10% to 1% over three years across a banking estate serving approximately 10 million customers.</dd></div>
+<div><dt>Business impact</dt><dd>Lower customer disruption, fewer recovery events and greater confidence in technology delivery.</dd></div>
+</dl>
+<strong>10% → 1% failed changes</strong>
+<small class="metric-source">Source: internal operational measure; details aligned with résumé.</small></article>
+<article class="case">
+<small>Observability &amp; automation</small>
+<h3>Reduced both monitoring noise and incident demand</h3>
+<dl>
+<div><dt>Challenge</dt><dd>High-volume, low-value event demand consumed engineering capacity and obscured genuinely actionable service signals.</dd></div>
+<div><dt>Leadership intervention</dt><dd>Redesigned thresholds and suppression runbooks, then introduced self-healing and auto-restart before ticket creation.</dd></div>
+<div><dt>Sustained result</dt><dd>Reduced monitoring events from approximately 3,500 to 1,500 per week and incidents from 1,000 to 450 per week.</dd></div>
+<div><dt>Business impact</dt><dd>Saved approximately £156K annually in event-handling cost and recovered roughly 160 engineer-hours per week through lower incident demand.</dd></div>
+</dl>
+<strong>2,000 fewer events + 550 fewer incidents/week</strong>
+<small class="metric-source">Source: internal operational measure; details aligned with résumé.</small></article>
 </div>
 </div>
 </section>
@@ -532,12 +582,12 @@ html{scroll-behavior:smooth}
 <h2>One decision view across four operational risk domains.</h2>
 <p>The dashboard combines event demand, incident recovery, change risk and resilience readiness. Intervention scores rise as concern increases; resilience is shown separately as a positive readiness measure.</p>
 </div>
-<div class="dashboard-shell">
+<div class="example-banner">Example scenario — replace assessment values to generate your own executive view.</div><div class="dashboard-shell">
 <div class="dashboard-top">
 <article class="dashboard-score-card">
 <div class="score-ring" id="exec-score-ring">
 <div class="score-ring-content">
-<strong id="exec-score">70</strong>
+<strong id="exec-score">—</strong>
 <span>Intervention score</span>
 </div>
 </div>
@@ -555,18 +605,18 @@ html{scroll-behavior:smooth}
 </article>
 </div>
 <div class="dashboard-metric-grid">
-<article class="dashboard-metric"><small>Combined intervention</small><strong id="exec-intervention">0 / 100</strong><span>event, incident and change risk</span></article>
-<article class="dashboard-metric"><small>Resilience readiness</small><strong id="exec-readiness">0 / 100</strong><span>higher is stronger</span></article>
-<article class="dashboard-metric"><small>Operational capacity</small><strong id="exec-value">£0</strong><span>illustrative recoverable effort value</span></article>
-<article class="dashboard-metric"><small>Incident exposure</small><strong id="exec-incident-exposure">£0</strong><span>illustrative annual business exposure</span></article>
-<article class="dashboard-metric"><small>Change exposure</small><strong id="exec-change-exposure">£0</strong><span>shown separately to avoid double counting</span></article>
+<article class="dashboard-metric"><small>Combined intervention</small><strong id="exec-intervention">—</strong><span>event, incident and change risk</span></article>
+<article class="dashboard-metric"><small>Resilience readiness</small><strong id="exec-readiness">—</strong><span>higher is stronger</span></article>
+<article class="dashboard-metric"><small>Operational capacity</small><strong id="exec-value">—</strong><span>illustrative recoverable effort value</span></article>
+<article class="dashboard-metric"><small>Incident exposure</small><strong id="exec-incident-exposure">—</strong><span>illustrative annual business exposure</span></article>
+<article class="dashboard-metric"><small>Change exposure</small><strong id="exec-change-exposure">—</strong><span>shown separately to avoid double counting</span></article>
 <article class="dashboard-metric"><small>Primary constraint</small><strong id="exec-primary-constraint">—</strong><span>highest current intervention need</span></article>
 </div>
 <div class="dashboard-lower">
 <article class="dashboard-bars">
 <h4>Executive control indicators</h4>
-<div class="dash-bar-row"><span>Event intervention</span><div class="dash-track"><div class="dash-fill" id="exec-noise-bar" style="width:72%"></div></div><b class="dash-value" id="exec-noise-value">72</b></div>
-<div class="dash-bar-row"><span>MTTR intervention</span><div class="dash-track"><div class="dash-fill" id="exec-mttr-bar" style="width:68%"></div></div><b class="dash-value" id="exec-mttr-value">68</b></div><div class="dash-bar-row"><span>Change intervention</span><div class="dash-track"><div class="dash-fill" id="exec-change-bar" style="width:67%"></div></div><b class="dash-value" id="exec-change-value">67</b></div><div class="dash-bar-row"><span>Resilience readiness</span><div class="dash-track"><div class="dash-fill" id="exec-readiness-bar" style="width:64%"></div></div><b class="dash-value" id="exec-readiness-value">64</b></div>
+<div class="dash-bar-row"><span>Event intervention</span><div class="dash-track"><div class="dash-fill" id="exec-noise-bar" style="width:0%"></div></div><b class="dash-value" id="exec-noise-value">—</b></div>
+<div class="dash-bar-row"><span>MTTR intervention</span><div class="dash-track"><div class="dash-fill" id="exec-mttr-bar" style="width:0%"></div></div><b class="dash-value" id="exec-mttr-value">—</b></div><div class="dash-bar-row"><span>Change intervention</span><div class="dash-track"><div class="dash-fill" id="exec-change-bar" style="width:0%"></div></div><b class="dash-value" id="exec-change-value">—</b></div><div class="dash-bar-row"><span>Resilience readiness</span><div class="dash-track"><div class="dash-fill" id="exec-readiness-bar" style="width:0%"></div></div><b class="dash-value" id="exec-readiness-value">—</b></div>
 <div class="dash-bar-row"><span>Signal quality</span><div class="dash-track"><div class="dash-fill" id="exec-signal-bar" style="width:30%"></div></div><b class="dash-value" id="exec-signal-value">30%</b></div>
 <div class="dash-bar-row"><span>Target recovery gap</span><div class="dash-track"><div class="dash-fill" id="exec-gap-bar" style="width:33%"></div></div><b class="dash-value" id="exec-gap-value">33%</b></div>
 </article>
@@ -723,15 +773,30 @@ html{scroll-behavior:smooth}
 </div>
 </div>
 </div>
+</section><section class="tool-section" id="assessments">
+<div class="wrap">
+<div class="section-head">
+<span class="section-label">Operational diagnostic suite</span>
+<h2>Four transparent assessments supporting executive conversations.</h2>
+<p>Each module uses illustrative defaults, visible assumptions and exportable recommendations. Select a tool to explore a specific operational question.</p>
+</div>
+<div class="cards">
+<article class="card"><span class="card-tag">Live</span><h3>Event Noise &amp; Cost</h3><p>Quantify alert demand, annual cost and governed optimisation potential.</p><a href="#event-noise-assessment">Run assessment →</a></article>
+<article class="card"><span class="card-tag">Live</span><h3>Incident &amp; MTTR</h3><p>Model customer impact and isolate detection, engagement, diagnosis and recovery constraints.</p><a href="#incident-mttr-assessment">Run assessment →</a></article>
+<article class="card"><span class="card-tag">Live</span><h3>Change Risk</h3><p>Assess production validation, rollback readiness, emergency demand and governance quality.</p><a href="#change-risk-assessment">Run assessment →</a></article>
+<article class="card"><span class="card-tag">Live</span><h3>Resilience Readiness</h3><p>Assess service mapping, impact tolerance, testing coverage, dependencies and recovery evidence.</p><a href="#resilience-readiness-assessment">Run assessment →</a></article>
+</div>
+</div>
 </section>
-<section class="assessment-section" id="event-noise-assessment">
+<section class="assessment-section assessment-collapsible is-collapsed" id="event-noise-assessment">
 <div class="wrap">
 <div class="section-head">
 <span class="section-label">Working assessment 01</span>
 <h2>Event Noise &amp; Operational Cost Assessment</h2>
 <p>Translate monitoring volume into engineering effort, annual cost and a governed automation opportunity. The model is designed for executive prioritisation—not as a substitute for detailed service analysis.</p>
-</div>
-<div class="assessment-shell">
+<button aria-expanded="false" class="assessment-toggle" type="button">Run assessment</button></div>
+
+<div class="assessment-body"><div class="assessment-shell">
 <form class="assessment-panel" data-validated-form="true" id="noise-form" novalidate="novalidate">
 <h3>Operating inputs</h3>
 <p class="panel-intro">Illustrative example values are pre-loaded. Replace them with a representative operating period before interpreting the result.</p>
@@ -772,17 +837,17 @@ html{scroll-behavior:smooth}
 <div class="recommendations" id="recommendations"></div>
 <p class="disclaimer">Illustrative model. Validate event classifications, labour assumptions, service risk and automation controls before using outputs for investment decisions.</p>
 </div>
-</div>
-</div>
+</div></div></div>
 </section>
-<section class="incident-section" id="incident-mttr-assessment">
+<section class="incident-section assessment-collapsible is-collapsed" id="incident-mttr-assessment">
 <div class="wrap">
 <div class="section-head">
 <span class="section-label">Working assessment 02</span>
 <h2>Incident Impact &amp; MTTR Assessment</h2>
 <p>Break mean time to restore into detection, engagement, diagnosis and recovery. Quantify customer exposure and identify the operating constraint that should receive executive attention first.</p>
-</div>
-<div class="incident-shell">
+<button aria-expanded="false" class="assessment-toggle" type="button">Run assessment</button></div>
+
+<div class="assessment-body"><div class="incident-shell">
 <form class="incident-panel" data-validated-form="true" id="mttr-form" novalidate="novalidate">
 <h3>Incident inputs</h3>
 <p class="panel-intro">Illustrative example values are pre-loaded. Replace them with a representative operating period before interpreting the result.</p>
@@ -812,17 +877,17 @@ html{scroll-behavior:smooth}
 <div class="recommendations" id="mttr-recommendations"></div>
 <p class="disclaimer">Illustrative model. Customer and value exposure should be validated against journey volumes, incident records and finance-approved assumptions.</p>
 </div>
-</div>
-</div>
+</div></div></div>
 </section>
-<section class="change-section" id="change-risk-assessment">
+<section class="change-section assessment-collapsible is-collapsed" id="change-risk-assessment">
 <div class="wrap">
 <div class="section-head">
 <span class="section-label">Working assessment 03</span>
 <h2>Change Risk &amp; Production Readiness Assessment</h2>
 <p>Assess change failure exposure, emergency demand and the quality of production controls across testing, automation, rollback and governance.</p>
-</div>
-<div class="change-shell">
+<button aria-expanded="false" class="assessment-toggle" type="button">Run assessment</button></div>
+
+<div class="assessment-body"><div class="change-shell">
 <form class="change-panel" data-validated-form="true" id="change-form" novalidate="novalidate">
 <h3>Change inputs</h3>
 <p class="panel-intro">Illustrative example values are pre-loaded. Replace them with a representative operating period before interpreting the result.</p>
@@ -869,17 +934,17 @@ html{scroll-behavior:smooth}
 <div class="recommendations" id="change-recommendations"></div>
 <p class="disclaimer">Illustrative model. Validate change classifications, failure definitions and exposure assumptions against production, incident, risk and finance data.</p>
 </div>
-</div>
-</div>
+</div></div></div>
 </section>
-<section class="resilience-assessment-section" id="resilience-readiness-assessment">
+<section class="resilience-assessment-section assessment-collapsible is-collapsed" id="resilience-readiness-assessment">
 <div class="wrap">
 <div class="section-head">
 <span class="section-label">Working assessment 04</span>
 <h2>Operational Resilience Readiness Assessment</h2>
 <p>Evaluate whether important business services can remain within impact tolerance through disruption, recovery and third-party failure.</p>
-</div>
-<div class="resilience-shell">
+<button aria-expanded="false" class="assessment-toggle" type="button">Run assessment</button></div>
+
+<div class="assessment-body"><div class="resilience-shell">
 <form class="resilience-inputs" data-validated-form="true" id="resilience-form" novalidate="novalidate">
 <h3>Readiness inputs</h3>
 <p class="panel-intro">Illustrative example values are pre-loaded. Replace them with a representative operating period before interpreting the result.</p>
@@ -933,68 +998,10 @@ html{scroll-behavior:smooth}
 <div class="resilience-recommendations" id="resilience-recommendations"></div>
 <p class="disclaimer">Decision-support assessment only. Validate scores using current service maps, exercise records, recovery evidence, third-party assurance and business-owner sign-off.</p>
 </div>
-</div>
-</div>
+</div></div></div>
 </section>
-<section class="tool-section" id="assessments">
-<div class="wrap">
-<div class="section-head">
-<span class="section-label">Operational diagnostic suite</span>
-<h2>Four transparent assessments supporting executive conversations.</h2>
-<p>Each module uses illustrative defaults, visible assumptions and exportable recommendations. Select a tool to explore a specific operational question.</p>
-</div>
-<div class="cards">
-<article class="card"><span class="card-tag">Live</span><h3>Event Noise &amp; Cost</h3><p>Quantify alert demand, annual cost and governed optimisation potential.</p><a href="#event-noise-assessment">Run assessment →</a></article>
-<article class="card"><span class="card-tag">Live</span><h3>Incident &amp; MTTR</h3><p>Model customer impact and isolate detection, engagement, diagnosis and recovery constraints.</p><a href="#incident-mttr-assessment">Run assessment →</a></article>
-<article class="card"><span class="card-tag">Live</span><h3>Change Risk</h3><p>Assess production validation, rollback readiness, emergency demand and governance quality.</p><a href="#change-risk-assessment">Run assessment →</a></article>
-<article class="card"><span class="card-tag">Live</span><h3>Resilience Readiness</h3><p>Assess service mapping, impact tolerance, testing coverage, dependencies and recovery evidence.</p><a href="#resilience-readiness-assessment">Run assessment →</a></article>
-</div>
-</div>
-</section>
-<section class="evidence" id="evidence">
-<div class="wrap">
-<div class="section-head">
-<span class="section-label">Selected leadership evidence</span>
-<h2>Transformation outcomes delivered in a Tier-1 global bank.</h2>
-<p>Anonymised examples showing the operating problem, my leadership intervention, the sustained result and its business significance.</p>
-</div>
-<div class="evidence-grid expanded-cases">
-<article class="case">
-<small>Resilience engineering</small>
-<h3>Reduced customer-facing downtime by 75%</h3>
-<dl>
-<div><dt>Challenge</dt><dd>Sequential recovery created 3–4 hours of downtime across four to five critical customer-facing applications.</dd></div>
-<div><dt>Leadership intervention</dt><dd>Challenged the inherited execution model and led the design of parallel recovery, automated sequences and tighter technical proving.</dd></div>
-<div><dt>Sustained result</dt><dd>Reduced disruption to approximately 60 minutes across eight resilience events.</dd></div>
-<div><dt>Business impact</dt><dd>Protected roughly 20,000 customers per event and recovered approximately 160,000 customer experience hours cumulatively.</dd></div>
-</dl>
-<strong>75% less downtime</strong>
-</article>
-<article class="case">
-<small>Change leadership</small>
-<h3>Raised change success from 78% to 97%</h3>
-<dl>
-<div><dt>Challenge</dt><dd>Production failures were driven by weak validation, deployment-window risk, recurring control gaps and inconsistent rollback readiness.</dd></div>
-<div><dt>Leadership intervention</dt><dd>Established evidence-led governance across testing, production proving, risk classification, rollback and failure learning.</dd></div>
-<div><dt>Sustained result</dt><dd>Improved change success while reducing repeat control failures and strengthening production accountability.</dd></div>
-<div><dt>Business impact</dt><dd>Lower customer disruption, fewer recovery events and greater confidence in technology delivery.</dd></div>
-</dl>
-<strong>78% → 97%</strong>
-</article>
-<article class="case">
-<small>Observability &amp; automation</small>
-<h3>Removed 550 avoidable incidents per week</h3>
-<dl>
-<div><dt>Challenge</dt><dd>High-volume, low-value event demand consumed engineering capacity and obscured genuinely actionable service signals.</dd></div>
-<div><dt>Leadership intervention</dt><dd>Combined alert rationalisation, suppression discipline, ownership controls, observability improvement and targeted self-healing.</dd></div>
-<div><dt>Sustained result</dt><dd>Reduced operational demand while enabling detection of material issues in under 15 minutes.</dd></div>
-<div><dt>Business impact</dt><dd>Recovered engineering capacity, improved signal quality and increased focus on preventative reliability work.</dd></div>
-</dl>
-<strong>550 fewer incidents/week</strong>
-</article>
-</div>
-</div>
-</section>
+
+
 <section class="methodology-section" id="methodology">
 <div class="wrap">
 <div class="section-head">
@@ -1020,11 +1027,11 @@ html{scroll-behavior:smooth}
 <p>Technology Operations &amp; Service Delivery Leader</p>
 <a download="" href="Akash_Jain_Resume.pdf">Download résumé →</a>
 <a href="https://www.linkedin.com/in/akash25j" rel="noopener" target="_blank">View LinkedIn →</a>
-</aside>
+<a href="mailto:akash25j@gmail.com">Email Akash →</a></aside>
 <div class="about-copy">
 <span class="section-label">Leadership profile</span>
 <h2>Twenty-plus years across engineering, service management and global banking operations.</h2>
-<p>I began in software engineering and large-scale platform delivery before moving into production operations and service leadership. Over the last seven years at VP level in a Tier-1 global bank, my focus has been measurable stability, resilient customer journeys, stronger change performance and operational capacity recovery.</p>
+<p>I began in software engineering and large-scale platform delivery before moving into production operations and service leadership. Since 2019, I have served as Vice President at Barclays, focusing on measurable stability, resilient customer journeys, stronger change performance and operational capacity recovery.</p>
 <p>I work across executive governance and engineering execution: incident, problem and change leadership; observability and AIOps; resilience testing; supplier and dependency management; and the operating mechanisms that convert operational data into investment decisions.</p>
 <div class="scope-grid">
 <div><b>Operating environment</b><span>Regulated, customer-critical global banking services</span></div>
@@ -1033,8 +1040,8 @@ html{scroll-behavior:smooth}
 <div><b>Geographic focus</b><span>UAE, Singapore and selected international leadership opportunities</span></div>
 </div>
 <div class="contact-panel">
-<div><strong>Discuss a technology operations leadership opportunity</strong><span>Review my résumé or start a direct conversation through LinkedIn.</span></div>
-<div class="actions"><a class="btn-primary" download="" href="Akash_Jain_Resume.pdf">Download résumé</a><a class="btn-secondary dark" href="https://www.linkedin.com/in/akash25j" rel="noopener" target="_blank">Start conversation</a></div>
+<div><strong>Discuss a technology operations leadership opportunity</strong><span>Download my résumé, email me directly or continue the conversation on LinkedIn.</span></div>
+<div class="actions"><a class="btn-primary" href="mailto:akash25j@gmail.com?subject=Technology%20Operations%20Leadership%20Opportunity">Email Akash</a><a class="btn-secondary dark" download="" href="Akash_Jain_Resume.pdf">Download résumé</a><a class="btn-secondary dark" href="https://www.linkedin.com/in/akash25j" rel="noopener" target="_blank">LinkedIn</a></div>
 </div>
 </div>
 </div>
@@ -1447,6 +1454,7 @@ html{scroll-behavior:smooth}
   }
 
   function updateExecutive(){
+    const invalid=[...document.querySelectorAll('input[type=number]')].some(f=>f.getAttribute('aria-invalid')==='true'); if(invalid) return;
     const s=sourceState();
     const intervention=Math.round((s.noise+s.incident+s.change)/3);
     const labels=['Event demand','Incident recovery','Change risk'];
@@ -1497,30 +1505,9 @@ html{scroll-behavior:smooth}
   }
 
   function executiveReport(){
-    const s=sourceState();
-    const intervention=Math.round((s.noise+s.incident+s.change)/3);
-    const lines=[
-      'AKASH JAIN — OPERATIONAL RESILIENCE STUDIO',
-      'Executive Diagnostic Summary',
-      '',
-      `Combined intervention score: ${intervention}/100`,
-      `Event intervention: ${s.noise}/100`,
-      `Incident intervention: ${s.incident}/100`,
-      `Change intervention: ${s.change}/100`,
-      `Resilience readiness: ${s.readiness}/100`,
-      '',
-      'SEPARATED VALUE VIEWS',
-      `Illustrative operational capacity opportunity: ${pounds(s.capacity)}`,
-      `Illustrative incident exposure: ${pounds(s.incidentExposure)}`,
-      `Illustrative change exposure: ${pounds(s.changeExposure)}`,
-      'These categories are deliberately not totalled because they may overlap.',
-      '',
-      'METHOD',
-      'Intervention scores rise as concern increases. Resilience readiness rises as capability strengthens.',
-      'Outputs are decision-support indicators and require validation against production, finance, risk and business-service evidence.'
-    ];
-    const blob=new Blob([lines.join('\n')],{type:'text/plain;charset=utf-8'});
-    const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='akash-jain-executive-diagnostic-summary.txt';a.click();URL.revokeObjectURL(a.href);
+    const values={score:document.getElementById('exec-score')?.textContent||'—',state:document.getElementById('exec-state')?.textContent||'',readiness:document.getElementById('exec-readiness')?.textContent||'',capacity:document.getElementById('exec-value')?.textContent||'',incident:document.getElementById('exec-incident-exposure')?.textContent||'',change:document.getElementById('exec-change-exposure')?.textContent||'',constraint:document.getElementById('exec-primary-constraint')?.textContent||'',recommendation:document.getElementById('exec-recommendation-title')?.textContent||'',copy:document.getElementById('exec-recommendation-copy')?.textContent||''};
+    const report=`<!doctype html><html><head><meta charset="utf-8"><title>Akash Jain Executive Diagnostic</title><style>body{font-family:Arial,sans-serif;color:#10233f;margin:42px;line-height:1.5}h1{font-size:30px;margin-bottom:4px}h2{font-size:18px;margin-top:28px;border-bottom:2px solid #1e88e5;padding-bottom:6px}.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.card{border:1px solid #ccd6e2;border-radius:10px;padding:14px}.card b{display:block;font-size:22px}.note{background:#f4f7fb;padding:14px;border-left:4px solid #1e88e5}.footer{margin-top:36px;font-size:11px;color:#65758b}@media print{button{display:none}}</style></head><body><h1>Operational Resilience Studio</h1><p><b>Executive diagnostic summary</b><br>Prepared from akashjain.tech</p><div class="grid"><div class="card">Intervention score<b>${values.score}/100</b></div><div class="card">Executive position<b>${values.state}</b></div><div class="card">Resilience readiness<b>${values.readiness}</b></div><div class="card">Primary constraint<b>${values.constraint}</b></div><div class="card">Operational capacity<b>${values.capacity}</b></div><div class="card">Incident exposure<b>${values.incident}</b></div><div class="card">Change exposure<b>${values.change}</b></div></div><h2>Priority recommendation</h2><div class="note"><b>${values.recommendation}</b><p>${values.copy}</p></div><h2>Important limitations</h2><p>Decision-support output only. Financial measures are shown separately because they may overlap. Validate assumptions against current operational, finance, risk and resilience evidence before using the result for investment or assurance decisions.</p><div class="footer">Akash Jain · Technology Operations & Service Delivery Leader · akash25j@gmail.com · linkedin.com/in/akash25j</div><script>window.onload=()=>window.print()<\/script></body></html>`;
+    const win=window.open('','_blank'); if(win){win.document.write(report);win.document.close();}
   }
 
   document.addEventListener('input',()=>setTimeout(updateExecutive,0));
@@ -1534,7 +1521,6 @@ html{scroll-behavior:smooth}
   setTimeout(updateExecutive,50);
 })();
 </script>
-
 <script>
 (function(){
   function validateField(field){
@@ -1557,6 +1543,14 @@ html{scroll-behavior:smooth}
       invalid[0].focus();
     }
   });
+})();
+</script>
+
+<script>
+(function(){
+ const menuBtn=document.getElementById('mobile-menu-button'), menu=document.getElementById('primary-navigation');
+ if(menuBtn&&menu){menuBtn.addEventListener('click',()=>{const open=menu.classList.toggle('open');menuBtn.setAttribute('aria-expanded',String(open));menuBtn.textContent=open?'Close':'Menu'});menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{menu.classList.remove('open');menuBtn.setAttribute('aria-expanded','false');menuBtn.textContent='Menu'}));}
+ document.querySelectorAll('.assessment-toggle').forEach(btn=>btn.addEventListener('click',()=>{const sec=btn.closest('.assessment-collapsible');const collapsed=sec.classList.toggle('is-collapsed');btn.setAttribute('aria-expanded',String(!collapsed));btn.textContent=collapsed?'Run assessment':'Hide assessment'}));
 })();
 </script>
 </body>
