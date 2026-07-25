@@ -245,7 +245,7 @@
 .dashboard-summary-card p{color:#b7c7da;font-size:13px;line-height:1.6;margin:0}
 .dashboard-metric-grid{
   display:grid;
-  grid-template-columns:repeat(4,1fr);
+  grid-template-columns:repeat(6,1fr);
   gap:10px;
   margin-bottom:15px;
 }
@@ -356,6 +356,79 @@
   .dashboard-shell,.exec-model,.radar-card,.maturity-summary{box-shadow:none!important}
 }
 
+
+/* Change Risk Assessment */
+.change-section{background:linear-gradient(180deg,#f7f9fc,#edf3f8)}
+.change-shell{display:grid;grid-template-columns:.88fr 1.12fr;gap:18px;align-items:start}
+.change-panel,.change-results{background:#fff;border:1px solid var(--line);border-radius:20px;box-shadow:0 18px 45px rgba(7,17,31,.08)}
+.change-panel{padding:23px;position:sticky;top:92px}.change-results{padding:23px}
+.change-panel h3,.change-results h3{margin:0 0 7px;font-size:21px}
+.change-score-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:16px}
+.change-score-box{padding:15px;border:1px solid var(--line);border-radius:13px;background:#f9fbfd}
+.change-score-box small{display:block;color:var(--muted);text-transform:uppercase;font-size:9px;font-weight:850;letter-spacing:.05em;margin-bottom:7px}
+.change-score-box strong{display:block;font-size:21px}.change-score-box span{display:block;color:#7a899d;font-size:10px;margin-top:4px}
+.control-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:16px}
+.control-card{padding:14px;border:1px solid var(--line);border-radius:13px;background:#fff}
+.control-card-head{display:flex;justify-content:space-between;gap:10px;align-items:center;margin-bottom:9px}
+.control-card-head b{font-size:11px}.control-card-head span{font-size:10px;font-weight:850;color:#2e5ed0}
+.control-track{height:9px;border-radius:999px;background:#e8eef5;overflow:hidden}
+.control-fill{height:100%;border-radius:999px;background:linear-gradient(90deg,var(--blue),var(--cyan));transition:.4s ease}
+.change-impact{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:16px}
+.change-impact-box{padding:15px;border-radius:13px;background:#102746;color:#fff}
+.change-impact-box small{display:block;color:#9eb3d0;text-transform:uppercase;font-size:9px;font-weight:850;letter-spacing:.05em;margin-bottom:7px}
+.change-impact-box strong{display:block;font-size:21px}.change-impact-box span{font-size:10px;color:#bdcbe0}
+@media(max-width:900px){.change-shell{grid-template-columns:1fr}.change-panel{position:static}.change-score-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.change-score-grid,.control-grid,.change-impact{grid-template-columns:1fr}}
+
+
+/* Operational Resilience Readiness Assessment */
+.resilience-assessment-section{background:linear-gradient(180deg,#07111f,#0b1830);color:#fff}
+.resilience-assessment-section .section-head p{color:#aebfd4}
+.resilience-shell{display:grid;grid-template-columns:.9fr 1.1fr;gap:18px;align-items:start}
+.resilience-inputs,.resilience-results{
+  border:1px solid rgba(255,255,255,.11);background:rgba(255,255,255,.055);
+  border-radius:20px;box-shadow:0 22px 55px rgba(0,0,0,.22);padding:23px
+}
+.resilience-inputs{position:sticky;top:92px}
+.resilience-inputs h3,.resilience-results h3{margin:0 0 7px;font-size:21px}
+.resilience-inputs .panel-intro{color:#aebfd4}
+.resilience-inputs .field label{color:#eaf0f8}
+.resilience-inputs .field small{color:#8fa8cb}
+.resilience-inputs input,.resilience-inputs select{
+  background:rgba(255,255,255,.075);border-color:rgba(255,255,255,.13);color:#fff
+}
+.resilience-inputs option{color:#111}
+.readiness-score-row{display:grid;grid-template-columns:160px 1fr;gap:18px;align-items:center;margin-bottom:18px}
+.readiness-ring{
+  --readiness-deg:244deg;width:150px;height:150px;border-radius:50%;display:grid;place-items:center;
+  background:conic-gradient(var(--cyan) var(--readiness-deg),rgba(255,255,255,.1) 0);position:relative
+}
+.readiness-ring:after{content:"";position:absolute;inset:13px;border-radius:50%;background:#0c1b31;border:1px solid rgba(255,255,255,.08)}
+.readiness-ring-inner{position:relative;z-index:1;text-align:center}
+.readiness-ring-inner strong{display:block;font-size:34px}.readiness-ring-inner span{font-size:9px;text-transform:uppercase;color:#9eb2cf;font-weight:850;letter-spacing:.07em}
+.readiness-copy small{display:block;color:#8fa8cb;text-transform:uppercase;font-size:9px;font-weight:900;letter-spacing:.07em;margin-bottom:7px}
+.readiness-copy h3{font-size:23px;margin-bottom:8px}.readiness-copy p{margin:0;color:#b7c7da;font-size:12px;line-height:1.55}
+.readiness-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:16px}
+.readiness-card{padding:15px;border:1px solid rgba(255,255,255,.11);border-radius:13px;background:rgba(255,255,255,.055)}
+.readiness-card small{display:block;color:#8fa8cb;text-transform:uppercase;font-size:9px;font-weight:850;letter-spacing:.05em;margin-bottom:7px}
+.readiness-card strong{display:block;font-size:20px}.readiness-card span{display:block;color:#b7c7da;font-size:10px;margin-top:4px}
+.capability-list{display:grid;gap:10px;margin-bottom:17px}
+.capability-row{display:grid;grid-template-columns:160px 1fr 44px;gap:10px;align-items:center}
+.capability-row span{font-size:11px;color:#c2cede}.capability-row b{text-align:right;font-size:11px}
+.capability-track{height:9px;border-radius:999px;background:rgba(255,255,255,.09);overflow:hidden}
+.capability-fill{height:100%;border-radius:999px;background:linear-gradient(90deg,var(--blue),var(--cyan));transition:.4s ease}
+.resilience-actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:16px}
+.resilience-actions button{
+  border:none;padding:11px 13px;border-radius:9px;font-size:11px;font-weight:850;cursor:pointer
+}
+.resilience-actions .run-btn{background:#fff;color:#102746}
+.resilience-actions .reset-btn,.resilience-actions .export-btn{background:rgba(255,255,255,.07);color:#fff;border:1px solid rgba(255,255,255,.12)}
+.resilience-recommendations{display:grid;gap:10px}
+.resilience-rec{padding:14px;border-radius:12px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.05)}
+.resilience-rec b{display:block;font-size:12px;margin-bottom:5px}.resilience-rec p{margin:0;color:#b7c7da;font-size:11px;line-height:1.5}
+@media(max-width:900px){.resilience-shell{grid-template-columns:1fr}.resilience-inputs{position:static}}
+@media(max-width:620px){.readiness-score-row{grid-template-columns:1fr}.readiness-grid{grid-template-columns:1fr}.capability-row{grid-template-columns:112px 1fr 38px}}
+
 </style>
 </head>
 <body>
@@ -363,7 +436,7 @@
   <div class="wrap nav-inner">
     <a class="brand" href="#top">AKASH JAIN<span>.TECH</span></a>
     <div class="nav-links">
-      <a href="#executive-dashboard">Dashboard</a><a href="#operating-model">Operating Model</a><a href="#maturity-radar">Maturity</a><a href="#framework">Framework</a><a href="#event-noise-assessment">Assessments</a><a href="#incident-mttr-assessment">MTTR</a><a href="#evidence">Evidence</a><a href="#about">About</a>
+      <a href="#executive-dashboard">Dashboard</a><a href="#operating-model">Operating Model</a><a href="#maturity-radar">Maturity</a><a href="#framework">Framework</a><a href="#event-noise-assessment">Assessments</a><a href="#incident-mttr-assessment">MTTR</a><a href="#change-risk-assessment">Change Risk</a><a href="#resilience-readiness-assessment">Resilience</a><a href="#evidence">Evidence</a><a href="#about">About</a>
       <a class="nav-cta" href="https://www.linkedin.com/in/akash25j" target="_blank" rel="noopener">Connect on LinkedIn</a>
     </div>
   </div>
@@ -435,14 +508,14 @@
         <article class="dashboard-metric"><small>Annual value opportunity</small><strong id="exec-savings">$314,417</strong><span>recoverable operational capacity</span></article>
         <article class="dashboard-metric"><small>Annual value exposure</small><strong id="exec-exposure">$1,350,000</strong><span>illustrative incident impact</span></article>
         <article class="dashboard-metric"><small>Primary constraint</small><strong id="exec-constraint">Diagnosis</strong><span>largest MTTR stage</span></article>
-        <article class="dashboard-metric"><small>Addressable demand</small><strong id="exec-addressable">1,348</strong><span>events per week</span></article>
+        <article class="dashboard-metric"><small>Addressable demand</small><strong id="exec-addressable">1,348</strong><span>events per week</span></article><article class="dashboard-metric"><small>Change risk</small><strong id="exec-change-risk">67 / 100</strong><span>production intervention score</span></article><article class="dashboard-metric"><small>Resilience readiness</small><strong id="exec-readiness">64 / 100</strong><span>capability readiness score</span></article>
       </div>
 
       <div class="dashboard-lower">
         <article class="dashboard-bars">
           <h4>Executive control indicators</h4>
           <div class="dash-bar-row"><span>Event intervention</span><div class="dash-track"><div class="dash-fill" id="exec-noise-bar" style="width:72%"></div></div><b class="dash-value" id="exec-noise-value">72</b></div>
-          <div class="dash-bar-row"><span>MTTR intervention</span><div class="dash-track"><div class="dash-fill" id="exec-mttr-bar" style="width:68%"></div></div><b class="dash-value" id="exec-mttr-value">68</b></div>
+          <div class="dash-bar-row"><span>MTTR intervention</span><div class="dash-track"><div class="dash-fill" id="exec-mttr-bar" style="width:68%"></div></div><b class="dash-value" id="exec-mttr-value">68</b></div><div class="dash-bar-row"><span>Change intervention</span><div class="dash-track"><div class="dash-fill" id="exec-change-bar" style="width:67%"></div></div><b class="dash-value" id="exec-change-value">67</b></div><div class="dash-bar-row"><span>Resilience readiness</span><div class="dash-track"><div class="dash-fill" id="exec-readiness-bar" style="width:64%"></div></div><b class="dash-value" id="exec-readiness-value">64</b></div>
           <div class="dash-bar-row"><span>Signal quality</span><div class="dash-track"><div class="dash-fill" id="exec-signal-bar" style="width:30%"></div></div><b class="dash-value" id="exec-signal-value">30%</b></div>
           <div class="dash-bar-row"><span>Target recovery gap</span><div class="dash-track"><div class="dash-fill" id="exec-gap-bar" style="width:33%"></div></div><b class="dash-value" id="exec-gap-value">33%</b></div>
         </article>
@@ -719,13 +792,149 @@
   </div>
 </section>
 
+
+<section class="change-section" id="change-risk-assessment">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-label">Working assessment 03</span>
+      <h2>Change Risk &amp; Production Readiness Assessment</h2>
+      <p>Assess change failure exposure, emergency demand and the quality of production controls across testing, automation, rollback and governance.</p>
+    </div>
+
+    <div class="change-shell">
+      <form class="change-panel" id="change-form">
+        <h3>Change inputs</h3>
+        <p class="panel-intro">Use a representative month or a stable monthly average for the service or portfolio being assessed.</p>
+        <div class="input-grid">
+          <div class="field"><label for="changes-month">Changes per month</label><input id="changes-month" type="number" min="0" value="320"><small>Total production changes.</small></div>
+          <div class="field"><label for="failed-change-pct">Failed change %</label><input id="failed-change-pct" type="number" min="0" max="100" step="0.1" value="8"><small>Changes causing incident, rollback or material remediation.</small></div>
+          <div class="field"><label for="emergency-change-pct">Emergency change %</label><input id="emergency-change-pct" type="number" min="0" max="100" step="0.1" value="14"><small>Share bypassing the normal planning cycle.</small></div>
+          <div class="field"><label for="rollback-pct">Successful rollback %</label><input id="rollback-pct" type="number" min="0" max="100" value="65"><small>Failed changes restored through a tested backout path.</small></div>
+          <div class="field"><label for="testing-score">Automated testing coverage</label><input id="testing-score" type="number" min="0" max="100" value="62"><small>Coverage of critical regression and integration paths.</small></div>
+          <div class="field"><label for="deployment-score">Deployment automation</label><input id="deployment-score" type="number" min="0" max="100" value="70"><small>Repeatability and control of release execution.</small></div>
+          <div class="field"><label for="validation-score">Production validation</label><input id="validation-score" type="number" min="0" max="100" value="58"><small>Automated post-deployment technical and journey validation.</small></div>
+          <div class="field"><label for="governance-score">Governance maturity</label><input id="governance-score" type="number" min="0" max="100" value="72"><small>Risk classification, evidence and decision discipline.</small></div>
+          <div class="field"><label for="failure-cost">Average failure exposure</label><input id="failure-cost" type="number" min="0" value="30000"><small>Indicative operational or business exposure per failed change in USD.</small></div>
+          <div class="field"><label for="change-criticality">Service criticality</label><select id="change-criticality"><option value="1">Standard enterprise service</option><option value="1.2" selected>Important business service</option><option value="1.5">Critical customer-facing service</option></select><small>Weights intervention priority without changing core failure estimates.</small></div>
+        </div>
+        <div class="assessment-actions">
+          <button class="run-btn" type="submit">Assess change risk</button>
+          <button class="reset-btn" type="button" id="change-reset">Reset</button>
+          <button class="export-btn" type="button" id="change-export">Download summary</button>
+        </div>
+      </form>
+
+      <div class="change-results">
+        <div class="result-banner">
+          <div><small>Change intervention score</small><strong id="change-score">67 / 100</strong></div>
+          <span class="risk-badge" id="change-priority">High-priority intervention</span>
+        </div>
+
+        <div class="change-score-grid">
+          <div class="change-score-box"><small>Expected failures</small><strong id="change-failures">26</strong><span>per month</span></div>
+          <div class="change-score-box"><small>Emergency changes</small><strong id="emergency-volume">45</strong><span>per month</span></div>
+          <div class="change-score-box"><small>Annual failures</small><strong id="annual-change-failures">307</strong><span>expected failed changes</span></div>
+          <div class="change-score-box"><small>Control strength</small><strong id="control-strength">65%</strong><span>average readiness</span></div>
+        </div>
+
+        <div class="control-grid">
+          <article class="control-card"><div class="control-card-head"><b>Automated testing</b><span id="testing-value">62%</span></div><div class="control-track"><div class="control-fill" id="testing-bar"></div></div></article>
+          <article class="control-card"><div class="control-card-head"><b>Deployment automation</b><span id="deployment-value">70%</span></div><div class="control-track"><div class="control-fill" id="deployment-bar"></div></div></article>
+          <article class="control-card"><div class="control-card-head"><b>Production validation</b><span id="validation-value">58%</span></div><div class="control-track"><div class="control-fill" id="validation-bar"></div></div></article>
+          <article class="control-card"><div class="control-card-head"><b>Rollback readiness</b><span id="rollback-value">65%</span></div><div class="control-track"><div class="control-fill" id="rollback-bar"></div></div></article>
+        </div>
+
+        <div class="change-impact">
+          <div class="change-impact-box"><small>Monthly failure exposure</small><strong id="monthly-change-exposure">$768,000</strong><span>illustrative value at risk</span></div>
+          <div class="change-impact-box"><small>Annual failure exposure</small><strong id="annual-change-exposure">$9,216,000</strong><span>before improvement</span></div>
+          <div class="change-impact-box"><small>Potential reduction</small><strong id="change-reduction">44%</strong><span>to reach a 4.5% failure rate</span></div>
+        </div>
+
+        <div class="recommendations" id="change-recommendations"></div>
+        <p class="disclaimer">Illustrative model. Validate change classifications, failure definitions and exposure assumptions against production, incident, risk and finance data.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="resilience-assessment-section" id="resilience-readiness-assessment">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-label">Working assessment 04</span>
+      <h2>Operational Resilience Readiness Assessment</h2>
+      <p>Evaluate whether important business services can remain within impact tolerance through disruption, recovery and third-party failure.</p>
+    </div>
+
+    <div class="resilience-shell">
+      <form class="resilience-inputs" id="resilience-form">
+        <h3>Readiness inputs</h3>
+        <p class="panel-intro">Score the current capability using evidence from service mapping, exercises, recovery tests and operational controls.</p>
+        <div class="input-grid">
+          <div class="field"><label for="service-mapping">Business-service mapping</label><input id="service-mapping" type="number" min="0" max="100" value="68"><small>Customer journeys, applications, infrastructure and third parties mapped end to end.</small></div>
+          <div class="field"><label for="impact-tolerance">Impact tolerance definition</label><input id="impact-tolerance" type="number" min="0" max="100" value="72"><small>Clear disruption thresholds linked to customer and business harm.</small></div>
+          <div class="field"><label for="scenario-testing">Scenario testing</label><input id="scenario-testing" type="number" min="0" max="100" value="60"><small>Realistic severe-but-plausible exercises completed with evidence.</small></div>
+          <div class="field"><label for="recovery-testing">Recovery testing</label><input id="recovery-testing" type="number" min="0" max="100" value="64"><small>Technology and service recovery proven against stated objectives.</small></div>
+          <div class="field"><label for="dependency-readiness">Dependency readiness</label><input id="dependency-readiness" type="number" min="0" max="100" value="58"><small>Internal and external dependency risks understood and exercised.</small></div>
+          <div class="field"><label for="crisis-governance">Crisis governance</label><input id="crisis-governance" type="number" min="0" max="100" value="75"><small>Decision rights, escalation and executive communication are tested.</small></div>
+          <div class="field"><label for="manual-workaround">Manual workaround effectiveness</label><input id="manual-workaround" type="number" min="0" max="100" value="52"><small>Workarounds are documented, scalable, safe and rehearsed.</small></div>
+          <div class="field"><label for="resilience-evidence">Evidence quality</label><input id="resilience-evidence" type="number" min="0" max="100" value="66"><small>Readiness claims are supported by current, traceable evidence.</small></div>
+          <div class="field"><label for="services-in-scope">Important services in scope</label><input id="services-in-scope" type="number" min="1" value="12"><small>Number of important business services assessed.</small></div>
+          <div class="field"><label for="services-tested">Services tested annually</label><input id="services-tested" type="number" min="0" value="7"><small>Services completing meaningful scenario or recovery tests.</small></div>
+          <div class="field"><label for="breach-events">Tolerance breaches per year</label><input id="breach-events" type="number" min="0" value="3"><small>Events exceeding the defined disruption tolerance.</small></div>
+          <div class="field"><label for="resilience-criticality">Portfolio criticality</label><select id="resilience-criticality"><option value="1">Standard enterprise portfolio</option><option value="1.2" selected>Important business services</option><option value="1.5">Systemically critical portfolio</option></select><small>Weights intervention priority without changing capability scores.</small></div>
+        </div>
+        <div class="resilience-actions">
+          <button class="run-btn" type="submit">Assess readiness</button>
+          <button class="reset-btn" type="button" id="resilience-reset">Reset</button>
+          <button class="export-btn" type="button" id="resilience-export">Download summary</button>
+        </div>
+      </form>
+
+      <div class="resilience-results">
+        <div class="readiness-score-row">
+          <div class="readiness-ring" id="readiness-ring"><div class="readiness-ring-inner"><strong id="readiness-score">64</strong><span>Readiness score</span></div></div>
+          <div class="readiness-copy">
+            <small>Executive position</small>
+            <h3 id="readiness-state">Material readiness gaps</h3>
+            <p id="readiness-summary">Core governance is present, but scenario testing, dependency assurance and scalable workarounds require stronger evidence.</p>
+          </div>
+        </div>
+
+        <div class="readiness-grid">
+          <article class="readiness-card"><small>Test coverage</small><strong id="test-coverage">58%</strong><span>important services tested annually</span></article>
+          <article class="readiness-card"><small>Lowest capability</small><strong id="weakest-capability">Workarounds</strong><span>primary readiness constraint</span></article>
+          <article class="readiness-card"><small>Tolerance breaches</small><strong id="breach-count">3</strong><span>events per year</span></article>
+          <article class="readiness-card"><small>Evidence confidence</small><strong id="evidence-confidence">66%</strong><span>current and traceable evidence</span></article>
+          <article class="readiness-card"><small>Services untested</small><strong id="untested-services">5</strong><span>within current annual cycle</span></article>
+          <article class="readiness-card"><small>Priority</small><strong id="readiness-priority">High</strong><span>executive intervention level</span></article>
+        </div>
+
+        <div class="capability-list">
+          <div class="capability-row"><span>Service mapping</span><div class="capability-track"><div class="capability-fill" id="cap-service-mapping"></div></div><b id="cap-service-mapping-value">68</b></div>
+          <div class="capability-row"><span>Impact tolerance</span><div class="capability-track"><div class="capability-fill" id="cap-impact-tolerance"></div></div><b id="cap-impact-tolerance-value">72</b></div>
+          <div class="capability-row"><span>Scenario testing</span><div class="capability-track"><div class="capability-fill" id="cap-scenario-testing"></div></div><b id="cap-scenario-testing-value">60</b></div>
+          <div class="capability-row"><span>Recovery testing</span><div class="capability-track"><div class="capability-fill" id="cap-recovery-testing"></div></div><b id="cap-recovery-testing-value">64</b></div>
+          <div class="capability-row"><span>Dependency readiness</span><div class="capability-track"><div class="capability-fill" id="cap-dependency-readiness"></div></div><b id="cap-dependency-readiness-value">58</b></div>
+          <div class="capability-row"><span>Crisis governance</span><div class="capability-track"><div class="capability-fill" id="cap-crisis-governance"></div></div><b id="cap-crisis-governance-value">75</b></div>
+          <div class="capability-row"><span>Manual workarounds</span><div class="capability-track"><div class="capability-fill" id="cap-manual-workaround"></div></div><b id="cap-manual-workaround-value">52</b></div>
+          <div class="capability-row"><span>Evidence quality</span><div class="capability-track"><div class="capability-fill" id="cap-resilience-evidence"></div></div><b id="cap-resilience-evidence-value">66</b></div>
+        </div>
+
+        <div class="resilience-recommendations" id="resilience-recommendations"></div>
+        <p class="disclaimer">Decision-support assessment only. Validate scores using current service maps, exercise records, recovery evidence, third-party assurance and business-owner sign-off.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="tool-section" id="tools">
   <div class="wrap">
     <div class="section-head"><span class="section-label">Assessment roadmap</span><h2>A growing executive diagnostic suite.</h2><p>Each module will use the same evidence-led design, decision outputs and exportable executive summary.</p></div>
     <div class="cards">
       <article class="card"><span class="card-tag">Live</span><h3>Event Noise & Cost</h3><p>Quantify alert demand, annual cost and governed optimisation potential.</p><a href="#event-noise-assessment">Run assessment →</a></article>
       <article class="card"><span class="card-tag">Live</span><h3>Incident & MTTR</h3><p>Model customer impact and isolate detection, engagement, diagnosis and recovery constraints.</p><a href="#incident-mttr-assessment">Run assessment →</a></article>
-      <article class="card"><span class="card-tag">Planned</span><h3>Change Risk</h3><p>Assess production validation, rollback readiness and governance quality.</p><a href="#event-noise-assessment">View roadmap →</a></article>
+      <article class="card"><span class="card-tag">Live</span><h3>Change Risk</h3><p>Assess production validation, rollback readiness, emergency demand and governance quality.</p><a href="#change-risk-assessment">Run assessment →</a></article>
       <article class="card"><span class="card-tag">Planned</span><h3>Resilience Readiness</h3><p>Test recoverability, dependency awareness and confidence against tolerances.</p><a href="#event-noise-assessment">View roadmap →</a></article>
     </div>
   </div>
@@ -1115,13 +1324,15 @@
       '',
       'VALUE AND EXPOSURE',
       `Annual operational value opportunity: ${$('exec-savings').textContent}`,
-      `Annual incident value exposure: ${$('exec-exposure').textContent}`,
+      `Combined annual incident and change exposure: ${$('exec-exposure').textContent}`,
       `Addressable event demand: ${$('exec-addressable').textContent} per week`,
       `Primary restoration constraint: ${$('exec-constraint').textContent}`,
       '',
       'ASSESSMENT SCORES',
       `Event intervention score: ${$('exec-noise-value').textContent}/100`,
       `MTTR intervention score: ${$('exec-mttr-value').textContent}/100`,
+      `Change intervention score: ${$('exec-change-value').textContent}/100`,
+      `Operational resilience readiness: ${$('exec-readiness-value').textContent}/100`,
       `Actionable signal ratio: ${$('exec-signal-value').textContent}`,
       `Recovery target gap: ${$('exec-gap-value').textContent}`,
       '',
@@ -1131,6 +1342,8 @@
       `Problem management: ${$('mat-problem-value').textContent}/100`,
       `Change management: ${$('mat-change-value').textContent}/100`,
       `Resilience readiness: ${$('mat-resilience-value').textContent}/100`,
+      `Important services tested: ${$('services-tested')?.value || 'N/A'} of ${$('services-in-scope')?.value || 'N/A'}`,
+      `Tolerance breaches per year: ${$('breach-count')?.textContent || 'N/A'}`,
       `Automation: ${$('mat-automation-value').textContent}/100`,
       '',
       'EXECUTIVE RECOMMENDATION',
@@ -1150,6 +1363,351 @@
     a.click();
     URL.revokeObjectURL(a.href);
   });
+})();
+</script>
+
+
+<script>
+(function(){
+  const form=document.getElementById('change-form'); if(!form) return;
+  const $=id=>document.getElementById(id);
+  const fmt=n=>Math.round(n).toLocaleString('en-US');
+  const money=n=>'$'+Math.round(n).toLocaleString('en-US');
+  const defaults={
+    'changes-month':320,'failed-change-pct':8,'emergency-change-pct':14,'rollback-pct':65,
+    'testing-score':62,'deployment-score':70,'validation-score':58,'governance-score':72,
+    'failure-cost':30000,'change-criticality':'1.2'
+  };
+
+  function calc(){
+    const changes=Math.max(0,+$('changes-month').value||0);
+    const failedPct=Math.min(100,Math.max(0,+$('failed-change-pct').value||0));
+    const emergencyPct=Math.min(100,Math.max(0,+$('emergency-change-pct').value||0));
+    const rollback=Math.min(100,Math.max(0,+$('rollback-pct').value||0));
+    const testing=Math.min(100,Math.max(0,+$('testing-score').value||0));
+    const deployment=Math.min(100,Math.max(0,+$('deployment-score').value||0));
+    const validation=Math.min(100,Math.max(0,+$('validation-score').value||0));
+    const governance=Math.min(100,Math.max(0,+$('governance-score').value||0));
+    const failureCost=Math.max(0,+$('failure-cost').value||0);
+    const criticality=+$('change-criticality').value||1;
+
+    const monthlyFailures=changes*(failedPct/100);
+    const emergencyVolume=changes*(emergencyPct/100);
+    const annualFailures=monthlyFailures*12;
+    const controlStrength=(testing+deployment+validation+rollback+governance)/5;
+    const monthlyExposure=monthlyFailures*failureCost;
+    const annualExposure=monthlyExposure*12;
+    const targetFailure=Math.max(1.5,Math.min(4.5,failedPct*.55));
+    const reduction=failedPct?Math.max(0,(failedPct-targetFailure)/failedPct*100):0;
+
+    let score=(failedPct*5*.35)+(emergencyPct*3*.18)+((100-rollback)*.16)+((100-testing)*.1)+((100-validation)*.11)+((100-governance)*.1);
+    score=Math.min(100,Math.round(score*criticality));
+
+    $('change-failures').textContent=fmt(monthlyFailures);
+    $('emergency-volume').textContent=fmt(emergencyVolume);
+    $('annual-change-failures').textContent=fmt(annualFailures);
+    $('control-strength').textContent=Math.round(controlStrength)+'%';
+    $('monthly-change-exposure').textContent=money(monthlyExposure);
+    $('annual-change-exposure').textContent=money(annualExposure);
+    $('change-reduction').textContent=Math.round(reduction)+'%';
+    $('change-score').textContent=score+' / 100';
+
+    [['testing',testing],['deployment',deployment],['validation',validation],['rollback',rollback]].forEach(([id,v])=>{
+      $(id+'-bar').style.width=v+'%';
+      $(id+'-value').textContent=Math.round(v)+'%';
+    });
+
+    let priority='Targeted improvement';
+    if(score>=75) priority='Immediate executive priority';
+    else if(score>=55) priority='High-priority intervention';
+    else if(score<35) priority='Controlled change performance';
+    $('change-priority').textContent=priority;
+
+    const recs=[];
+    if(failedPct>=8) recs.push(['Reduce the change failure rate','Prioritise the change categories and services generating the highest incident, rollback and customer-impact exposure.']);
+    if(emergencyPct>=12) recs.push(['Address emergency-change demand','Separate genuine emergencies from planning failure, recurring defects and delayed risk decisions; then remove the dominant causes.']);
+    if(testing<70) recs.push(['Strengthen automated validation','Expand critical-path regression, integration and negative testing before increasing deployment frequency.']);
+    if(validation<70) recs.push(['Automate production proving','Validate service health, customer journeys and downstream dependencies immediately after deployment.']);
+    if(rollback<75) recs.push(['Make recovery a release requirement','Require tested backout, traffic switching or feature control for high-impact changes before production approval.']);
+    if(governance<70) recs.push(['Improve risk-based governance','Use service criticality, blast radius, reversibility and evidence quality to determine approval and assurance depth.']);
+    if(!recs.length) recs.push(['Maintain evidence-led change control','Performance is controlled. Continue stage-level assurance, failure learning and validation automation.']);
+    $('change-recommendations').innerHTML=recs.slice(0,4).map(r=>`<article class="rec"><b>${r[0]}</b><p>${r[1]}</p></article>`).join('');
+
+    return {changes,failedPct,emergencyPct,rollback,testing,deployment,validation,governance,failureCost,monthlyFailures,emergencyVolume,annualFailures,controlStrength,monthlyExposure,annualExposure,reduction,score,priority,recs};
+  }
+
+  form.addEventListener('submit',e=>{e.preventDefault();calc()});
+  [...form.querySelectorAll('input,select')].forEach(el=>el.addEventListener('input',calc));
+  $('change-reset').addEventListener('click',()=>{Object.entries(defaults).forEach(([k,v])=>$(k).value=v);calc()});
+  $('change-export').addEventListener('click',()=>{
+    const r=calc();
+    const lines=[
+      'OPERATIONAL RESILIENCE STUDIO',
+      'Change Risk & Production Readiness Assessment',
+      'Generated from akashjain.tech',
+      '',
+      `Change intervention score: ${r.score}/100`,
+      `Priority: ${r.priority}`,
+      '',
+      'INPUTS',
+      `Changes per month: ${fmt(r.changes)}`,
+      `Failed change rate: ${r.failedPct}%`,
+      `Emergency change rate: ${r.emergencyPct}%`,
+      `Successful rollback rate: ${r.rollback}%`,
+      `Automated testing coverage: ${r.testing}%`,
+      `Deployment automation: ${r.deployment}%`,
+      `Production validation: ${r.validation}%`,
+      `Governance maturity: ${r.governance}%`,
+      '',
+      'OUTPUTS',
+      `Expected failures per month: ${fmt(r.monthlyFailures)}`,
+      `Emergency changes per month: ${fmt(r.emergencyVolume)}`,
+      `Expected annual failures: ${fmt(r.annualFailures)}`,
+      `Average control strength: ${Math.round(r.controlStrength)}%`,
+      `Monthly failure exposure: ${money(r.monthlyExposure)}`,
+      `Annual failure exposure: ${money(r.annualExposure)}`,
+      '',
+      'RECOMMENDATIONS',
+      ...r.recs.slice(0,4).map((x,i)=>`${i+1}. ${x[0]} — ${x[1]}`),
+      '',
+      'Note: Validate assumptions against production, incident, risk and finance data.'
+    ];
+    const blob=new Blob([lines.join('\n')],{type:'text/plain;charset=utf-8'});
+    const a=document.createElement('a');a.href=URL.createObjectURL(blob);
+    a.download='change-risk-assessment-summary.txt';a.click();URL.revokeObjectURL(a.href);
+  });
+  calc();
+})();
+</script>
+
+
+<script>
+(function(){
+  const $=id=>document.getElementById(id);
+  const parseNumber=text=>Number(String(text||'').replace(/[^0-9.-]/g,''))||0;
+  const clamp=n=>Math.max(0,Math.min(100,Math.round(n)));
+  const money=n=>'$'+Math.round(n).toLocaleString('en-US');
+
+  function syncChangeAcrossExecutiveViews(){
+    if(!$('change-score') || !$('exec-score')) return;
+    const noise=clamp(parseNumber($('score')?.textContent));
+    const mttr=clamp(parseNumber($('mttr-score')?.textContent));
+    const change=clamp(parseNumber($('change-score').textContent));
+    const combined=Math.round((noise+mttr+change)/3);
+
+    $('exec-score').textContent=combined;
+    $('exec-score-ring').style.setProperty('--score-deg',(combined*3.6)+'deg');
+    $('exec-change-risk').textContent=change+' / 100';
+    $('exec-change-bar').style.width=change+'%';
+    $('exec-change-value').textContent=change;
+
+    const noiseExposure=parseNumber($('exec-exposure')?.textContent);
+    const changeExposure=parseNumber($('annual-change-exposure')?.textContent);
+    if($('exec-exposure')) $('exec-exposure').textContent=money(noiseExposure+changeExposure);
+
+    let state='Controlled performance', status='Maintain controls';
+    if(combined>=75){state='Immediate executive priority';status='Executive action required';}
+    else if(combined>=55){state='High-priority intervention';status='Action recommended';}
+    else if(combined>=35){state='Targeted improvement';status='Focused optimisation';}
+    $('exec-state').textContent=state;
+    $('exec-status').textContent=status;
+
+    const scores=[noise,mttr,change];
+    const max=Math.max(...scores), idx=scores.indexOf(max);
+    if(idx===2){
+      $('exec-headline').textContent='Production change risk is the dominant executive issue.';
+      $('exec-summary').textContent='The change assessment is creating the strongest intervention signal. Prioritise failure-rate reduction, emergency-demand control, automated validation and tested rollback.';
+      $('exec-recommendation-title').textContent='Strengthen production readiness before increasing change velocity';
+      $('exec-recommendation-copy').textContent='Focus on the services and change types generating the highest failure exposure, then improve testing, post-deployment validation and reversible recovery controls.';
+    }
+
+    // Update maturity change score from actual change controls.
+    const controlStrength=clamp(parseNumber($('control-strength')?.textContent));
+    if($('mat-change')){
+      $('mat-change').style.width=controlStrength+'%';
+      $('mat-change-value').textContent=controlStrength;
+    }
+  }
+
+  const form=$('change-form');
+  if(form){
+    form.addEventListener('input',()=>setTimeout(syncChangeAcrossExecutiveViews,0));
+    form.addEventListener('submit',()=>setTimeout(syncChangeAcrossExecutiveViews,0));
+  }
+  const reset=$('change-reset');
+  if(reset) reset.addEventListener('click',()=>setTimeout(syncChangeAcrossExecutiveViews,0));
+  window.addEventListener('load',()=>setTimeout(syncChangeAcrossExecutiveViews,10));
+  setTimeout(syncChangeAcrossExecutiveViews,10);
+})();
+</script>
+
+
+<script>
+(function(){
+  const form=document.getElementById('resilience-form'); if(!form) return;
+  const $=id=>document.getElementById(id);
+  const clamp=n=>Math.max(0,Math.min(100,Math.round(n)));
+  const defaults={
+    'service-mapping':68,'impact-tolerance':72,'scenario-testing':60,'recovery-testing':64,
+    'dependency-readiness':58,'crisis-governance':75,'manual-workaround':52,'resilience-evidence':66,
+    'services-in-scope':12,'services-tested':7,'breach-events':3,'resilience-criticality':'1.2'
+  };
+  const labels={
+    'service-mapping':'Service mapping','impact-tolerance':'Impact tolerance',
+    'scenario-testing':'Scenario testing','recovery-testing':'Recovery testing',
+    'dependency-readiness':'Dependency readiness','crisis-governance':'Crisis governance',
+    'manual-workaround':'Workarounds','resilience-evidence':'Evidence quality'
+  };
+
+  function calculate(){
+    const ids=['service-mapping','impact-tolerance','scenario-testing','recovery-testing','dependency-readiness','crisis-governance','manual-workaround','resilience-evidence'];
+    const vals={};
+    ids.forEach(id=>vals[id]=clamp(+$ (id).value||0));
+    const inScope=Math.max(1,+$('services-in-scope').value||1);
+    const tested=Math.max(0,Math.min(inScope,+$('services-tested').value||0));
+    const breaches=Math.max(0,+$('breach-events').value||0);
+    const criticality=+$('resilience-criticality').value||1;
+
+    const weights={
+      'service-mapping':.14,'impact-tolerance':.13,'scenario-testing':.15,'recovery-testing':.16,
+      'dependency-readiness':.13,'crisis-governance':.1,'manual-workaround':.08,'resilience-evidence':.11
+    };
+    let capability=ids.reduce((sum,id)=>sum+vals[id]*weights[id],0);
+    const coverage=(tested/inScope)*100;
+    capability=(capability*.82)+(coverage*.18);
+    const breachPenalty=Math.min(18,breaches*3*criticality);
+    const score=clamp(capability-breachPenalty);
+
+    const weakest=ids.reduce((a,b)=>vals[a]<=vals[b]?a:b);
+    const untested=Math.max(0,inScope-tested);
+    let state='Established readiness';
+    let priority='Moderate';
+    let summary='The portfolio has established resilience controls with targeted gaps requiring evidence-led improvement.';
+    if(score>=80){state='Strong resilience readiness';priority='Low';summary='Core readiness controls are strong. Focus on sustained evidence, dependency scenarios and continuous assurance.';}
+    else if(score>=65){state='Developing resilience readiness';priority='Moderate';summary='Core controls are present, but the weakest capabilities need targeted improvement and stronger evidence.';}
+    else if(score>=45){state='Material readiness gaps';priority='High';summary='Core governance is present, but scenario testing, dependency assurance and scalable workarounds require stronger evidence.';}
+    else {state='Critical readiness weakness';priority='Immediate';summary='The current profile indicates material risk of exceeding disruption tolerance during a severe operational event.';}
+
+    $('readiness-score').textContent=score;
+    $('readiness-ring').style.setProperty('--readiness-deg',(score*3.6)+'deg');
+    $('readiness-state').textContent=state;
+    $('readiness-summary').textContent=summary;
+    $('test-coverage').textContent=Math.round(coverage)+'%';
+    $('weakest-capability').textContent=labels[weakest];
+    $('breach-count').textContent=Math.round(breaches);
+    $('evidence-confidence').textContent=vals['resilience-evidence']+'%';
+    $('untested-services').textContent=Math.round(untested);
+    $('readiness-priority').textContent=priority;
+
+    ids.forEach(id=>{
+      $('cap-'+id).style.width=vals[id]+'%';
+      $('cap-'+id+'-value').textContent=vals[id];
+    });
+
+    const recs=[];
+    if(coverage<80) recs.push(['Increase service test coverage',`Bring the remaining ${Math.round(untested)} important services into an annual scenario and recovery testing cycle.`]);
+    if(vals['service-mapping']<70) recs.push(['Complete end-to-end service mapping','Connect customer journeys, applications, infrastructure, data, people and third parties to named business services.']);
+    if(vals['scenario-testing']<70) recs.push(['Run severe-but-plausible scenarios','Exercise concurrent technology, supplier and operational failures with business owners and executive decision-makers.']);
+    if(vals['recovery-testing']<70) recs.push(['Prove recovery against tolerance','Measure real recovery time, data integrity and customer-journey restoration rather than relying on component-level success.']);
+    if(vals['dependency-readiness']<70) recs.push(['Strengthen dependency assurance','Test internal shared services and third-party failure modes, including degraded operation and supplier unavailability.']);
+    if(vals['manual-workaround']<70) recs.push(['Industrialise manual workarounds','Confirm workarounds are safe, scalable, time-bounded, adequately staffed and rehearsed under realistic demand.']);
+    if(vals['resilience-evidence']<75) recs.push(['Improve evidence quality','Maintain current service maps, test outcomes, risk acceptance, remediation ownership and business sign-off in one assurance view.']);
+    if(breaches>0) recs.push(['Learn from tolerance breaches','Treat every breach as an executive learning event with causal analysis, funded remediation and a retest date.']);
+    if(!recs.length) recs.push(['Sustain resilience assurance','Maintain coverage, refresh scenarios and keep business-service evidence current as technology and suppliers change.']);
+    $('resilience-recommendations').innerHTML=recs.slice(0,4).map(r=>`<article class="resilience-rec"><b>${r[0]}</b><p>${r[1]}</p></article>`).join('');
+
+    return {ids,vals,inScope,tested,breaches,coverage,score,weakest,state,priority,recs,untested};
+  }
+
+  form.addEventListener('submit',e=>{e.preventDefault();calculate()});
+  form.querySelectorAll('input,select').forEach(el=>el.addEventListener('input',calculate));
+  $('resilience-reset').addEventListener('click',()=>{Object.entries(defaults).forEach(([k,v])=>$(k).value=v);calculate()});
+  $('resilience-export').addEventListener('click',()=>{
+    const r=calculate();
+    const lines=[
+      'OPERATIONAL RESILIENCE STUDIO',
+      'Operational Resilience Readiness Assessment',
+      'Generated from akashjain.tech',
+      '',
+      `Readiness score: ${r.score}/100`,
+      `Executive position: ${r.state}`,
+      `Priority: ${r.priority}`,
+      '',
+      'PORTFOLIO COVERAGE',
+      `Important services in scope: ${r.inScope}`,
+      `Services tested annually: ${r.tested}`,
+      `Test coverage: ${Math.round(r.coverage)}%`,
+      `Services untested: ${Math.round(r.untested)}`,
+      `Tolerance breaches per year: ${r.breaches}`,
+      '',
+      'CAPABILITIES',
+      ...r.ids.map(id=>`${labels[id]}: ${r.vals[id]}/100`),
+      '',
+      'RECOMMENDATIONS',
+      ...r.recs.slice(0,4).map((x,i)=>`${i+1}. ${x[0]} — ${x[1]}`),
+      '',
+      'Note: Validate using current service maps, exercise records, recovery evidence and business-owner sign-off.'
+    ];
+    const blob=new Blob([lines.join('\n')],{type:'text/plain;charset=utf-8'});
+    const a=document.createElement('a');a.href=URL.createObjectURL(blob);
+    a.download='operational-resilience-readiness-summary.txt';a.click();URL.revokeObjectURL(a.href);
+  });
+  calculate();
+})();
+</script>
+
+
+<script>
+(function(){
+  const $=id=>document.getElementById(id);
+  const n=id=>Number(String($(id)?.textContent||'').replace(/[^0-9.-]/g,''))||0;
+  const clamp=x=>Math.max(0,Math.min(100,Math.round(x)));
+
+  function syncReadiness(){
+    if(!$('readiness-score') || !$('exec-score')) return;
+    const noise=clamp(n('score'));
+    const mttr=clamp(n('mttr-score'));
+    const change=clamp(n('change-score'));
+    const readiness=clamp(n('readiness-score'));
+    const combined=Math.round((noise+mttr+change+(100-readiness))/4);
+
+    $('exec-score').textContent=combined;
+    $('exec-score-ring').style.setProperty('--score-deg',(combined*3.6)+'deg');
+    $('exec-readiness').textContent=readiness+' / 100';
+    $('exec-readiness-bar').style.width=readiness+'%';
+    $('exec-readiness-value').textContent=readiness;
+
+    if($('mat-resilience')){
+      $('mat-resilience').style.width=readiness+'%';
+      $('mat-resilience-value').textContent=readiness;
+    }
+
+    const interventionScores=[noise,mttr,change,100-readiness];
+    const idx=interventionScores.indexOf(Math.max(...interventionScores));
+    if(idx===3){
+      $('exec-headline').textContent='Operational resilience readiness is the dominant executive issue.';
+      $('exec-summary').textContent='The readiness assessment indicates the strongest intervention need. Prioritise service mapping, severe-but-plausible testing, dependency assurance and evidence-backed recovery confidence.';
+      $('exec-recommendation-title').textContent='Prove important services can remain within tolerance';
+      $('exec-recommendation-copy').textContent='Close the weakest readiness gaps, expand annual testing coverage and require current evidence that customer journeys can recover through technology and third-party disruption.';
+    }
+
+    let state='Controlled performance',status='Maintain controls';
+    if(combined>=75){state='Immediate executive priority';status='Executive action required';}
+    else if(combined>=55){state='High-priority intervention';status='Action recommended';}
+    else if(combined>=35){state='Targeted improvement';status='Focused optimisation';}
+    $('exec-state').textContent=state;
+    $('exec-status').textContent=status;
+  }
+
+  const form=$('resilience-form');
+  if(form){
+    form.addEventListener('input',()=>setTimeout(syncReadiness,0));
+    form.addEventListener('submit',()=>setTimeout(syncReadiness,0));
+  }
+  const reset=$('resilience-reset');
+  if(reset) reset.addEventListener('click',()=>setTimeout(syncReadiness,0));
+  window.addEventListener('load',()=>setTimeout(syncReadiness,20));
+  setTimeout(syncReadiness,20);
 })();
 </script>
 
