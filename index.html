@@ -149,6 +149,213 @@
 @media(max-width:900px){.incident-shell{grid-template-columns:1fr}.incident-panel{position:static}.stage-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:560px){.stage-grid,.impact-strip,.timeline-legend{grid-template-columns:1fr}.timeline-track{height:28px}}
 
+
+/* Executive Operations Dashboard */
+.dashboard-section{
+  background:
+    radial-gradient(circle at 86% 8%,rgba(43,213,196,.10),transparent 26%),
+    linear-gradient(180deg,#07111f,#0b1830);
+  color:#fff;
+}
+.dashboard-section .section-head p{color:#aebfd4}
+.dashboard-shell{
+  border:1px solid rgba(255,255,255,.11);
+  border-radius:24px;
+  background:rgba(255,255,255,.055);
+  box-shadow:0 28px 70px rgba(0,0,0,.22);
+  padding:22px;
+}
+.dashboard-top{
+  display:grid;
+  grid-template-columns:1.05fr .95fr;
+  gap:15px;
+  margin-bottom:15px;
+}
+.dashboard-score-card,
+.dashboard-summary-card,
+.dashboard-metric,
+.dashboard-bars,
+.dashboard-recommendation{
+  border:1px solid rgba(255,255,255,.11);
+  background:rgba(255,255,255,.06);
+  border-radius:17px;
+}
+.dashboard-score-card{
+  padding:23px;
+  display:grid;
+  grid-template-columns:auto 1fr;
+  gap:20px;
+  align-items:center;
+}
+.score-ring{
+  --score-deg:252deg;
+  width:145px;
+  height:145px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  background:conic-gradient(var(--cyan) var(--score-deg),rgba(255,255,255,.10) 0);
+  position:relative;
+}
+.score-ring:after{
+  content:"";
+  position:absolute;
+  inset:13px;
+  border-radius:50%;
+  background:#0c1b31;
+  border:1px solid rgba(255,255,255,.08);
+}
+.score-ring-content{position:relative;z-index:1;text-align:center}
+.score-ring-content strong{display:block;font-size:35px;letter-spacing:-.045em}
+.score-ring-content span{font-size:10px;color:#9eb2cf;text-transform:uppercase;letter-spacing:.08em;font-weight:850}
+.dashboard-score-copy small,
+.dashboard-summary-card small,
+.dashboard-metric small,
+.dashboard-recommendation small{
+  display:block;
+  color:#8fa8cb;
+  font-size:9px;
+  font-weight:900;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  margin-bottom:8px;
+}
+.dashboard-score-copy h3{font-size:25px;margin:0 0 8px}
+.dashboard-score-copy p{margin:0;color:#b7c7da;font-size:13px;line-height:1.55}
+.dashboard-status{
+  display:inline-flex;
+  margin-top:14px;
+  padding:7px 10px;
+  border-radius:999px;
+  background:rgba(217,150,29,.13);
+  border:1px solid rgba(217,150,29,.28);
+  color:#ffd88e;
+  font-size:10px;
+  font-weight:900;
+  text-transform:uppercase;
+  letter-spacing:.05em;
+}
+.dashboard-summary-card{
+  padding:23px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+.dashboard-summary-card h3{font-size:22px;margin:0 0 10px}
+.dashboard-summary-card p{color:#b7c7da;font-size:13px;line-height:1.6;margin:0}
+.dashboard-metric-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:10px;
+  margin-bottom:15px;
+}
+.dashboard-metric{padding:16px}
+.dashboard-metric strong{display:block;font-size:22px;letter-spacing:-.03em;margin-bottom:4px}
+.dashboard-metric span{color:#9db0c9;font-size:10px;line-height:1.4}
+.dashboard-lower{
+  display:grid;
+  grid-template-columns:1.05fr .95fr;
+  gap:15px;
+}
+.dashboard-bars{padding:18px}
+.dashboard-bars h4,.dashboard-recommendation h4{margin:0 0 15px;font-size:14px}
+.dash-bar-row{
+  display:grid;
+  grid-template-columns:145px 1fr 46px;
+  gap:10px;
+  align-items:center;
+  margin:12px 0;
+}
+.dash-bar-row span{font-size:11px;color:#b9c7d9}
+.dash-track{height:10px;background:rgba(255,255,255,.09);border-radius:999px;overflow:hidden}
+.dash-fill{height:100%;border-radius:999px;background:linear-gradient(90deg,var(--blue),var(--cyan));transition:.4s ease}
+.dash-value{text-align:right;font-size:11px;font-weight:850;color:#fff}
+.dashboard-recommendation{padding:18px}
+.dashboard-recommendation h4{font-size:18px;margin-bottom:8px}
+.dashboard-recommendation p{margin:0;color:#b7c7da;font-size:12px;line-height:1.58}
+.dashboard-actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:16px}
+.dashboard-actions a{
+  padding:10px 12px;border-radius:9px;font-size:11px;font-weight:850;
+  background:#fff;color:#102746;
+}
+.dashboard-actions a.secondary{
+  background:rgba(255,255,255,.07);color:#fff;border:1px solid rgba(255,255,255,.12)
+}
+@media(max-width:950px){
+  .dashboard-top,.dashboard-lower{grid-template-columns:1fr}
+  .dashboard-metric-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:620px){
+  .dashboard-score-card{grid-template-columns:1fr}.score-ring{width:125px;height:125px}
+  .dashboard-metric-grid{grid-template-columns:1fr}
+  .dash-bar-row{grid-template-columns:112px 1fr 40px}
+}
+
+
+/* Executive operating model and maturity radar */
+.operating-model-section{background:#f5f8fc}
+.exec-model{
+  border:1px solid var(--line);border-radius:24px;background:#fff;box-shadow:var(--shadow);
+  padding:24px;overflow:hidden
+}
+.exec-model-top{
+  display:grid;grid-template-columns:1fr auto;gap:18px;align-items:center;
+  padding:18px 20px;border-radius:16px;background:linear-gradient(135deg,#0a172b,#17345e);color:#fff;margin-bottom:18px
+}
+.exec-model-top small{display:block;color:#91abd0;text-transform:uppercase;font-weight:900;letter-spacing:.08em;margin-bottom:6px}
+.exec-model-top h3{margin:0;font-size:23px}.exec-model-top p{margin:6px 0 0;color:#bdcbe0;font-size:12px}
+.exec-model-outcome{padding:10px 13px;border-radius:999px;background:rgba(43,213,196,.12);border:1px solid rgba(43,213,196,.25);font-size:11px;font-weight:900;color:#87f2e6}
+.model-flow{display:grid;grid-template-columns:1fr 60px 1fr 60px 1fr;gap:8px;align-items:stretch}
+.model-column{border:1px solid var(--line);border-radius:17px;padding:16px;background:#fbfdff}
+.model-column h4{font-size:13px;margin:0 0 12px;text-transform:uppercase;letter-spacing:.06em}
+.model-item{padding:12px;border:1px solid var(--line);border-radius:11px;background:#fff;margin-bottom:9px}
+.model-item:last-child{margin-bottom:0}.model-item b{display:block;font-size:12px;margin-bottom:4px}.model-item span{display:block;color:var(--muted);font-size:10px;line-height:1.42}
+.model-arrow{display:grid;place-items:center;color:#5478c9;font-size:28px;font-weight:900}
+.model-loop{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:16px;padding-top:16px;border-top:1px solid var(--line)
+}
+.loop-item{padding:13px;border-radius:12px;background:#102746;color:#fff}
+.loop-item small{display:block;color:#8fa8cb;font-size:9px;text-transform:uppercase;font-weight:900;letter-spacing:.06em;margin-bottom:6px}
+.loop-item b{font-size:12px}
+.maturity-section{background:#fff}
+.maturity-shell{display:grid;grid-template-columns:.9fr 1.1fr;gap:18px}
+.radar-card,.maturity-summary{border:1px solid var(--line);border-radius:20px;background:#fff;box-shadow:0 18px 45px rgba(7,17,31,.08);padding:22px}
+.radar-wrap{position:relative;aspect-ratio:1/1;max-width:470px;margin:auto}
+.radar-wrap svg{width:100%;height:100%;display:block}
+.radar-label{font-size:10px;font-weight:850;fill:#47566b}
+.radar-grid{fill:none;stroke:#d8e1ed;stroke-width:1}
+.radar-axis{stroke:#d8e1ed;stroke-width:1}
+.radar-shape{fill:rgba(77,124,255,.20);stroke:#4d7cff;stroke-width:2.5;transition:.45s ease}
+.radar-dot{fill:#fff;stroke:#4d7cff;stroke-width:2}
+.maturity-summary h3{margin:0 0 8px;font-size:22px}.maturity-summary>p{margin:0;color:var(--muted);font-size:13px;line-height:1.55}
+.maturity-list{display:grid;gap:10px;margin-top:18px}
+.maturity-row{display:grid;grid-template-columns:145px 1fr 45px;gap:10px;align-items:center}
+.maturity-row span{font-size:11px;color:#42516a}.maturity-row b{text-align:right;font-size:11px}
+.maturity-track{height:9px;border-radius:999px;background:#e8eef5;overflow:hidden}
+.maturity-fill{height:100%;border-radius:999px;background:linear-gradient(90deg,var(--blue),var(--cyan));transition:.4s ease}
+.executive-summary-box{margin-top:16px;border-left:4px solid var(--cyan);border-radius:12px;background:#102746;color:#fff;padding:15px}
+.executive-summary-box small{display:block;color:#8fa8cb;text-transform:uppercase;font-size:9px;font-weight:900;letter-spacing:.07em;margin-bottom:7px}
+.executive-summary-box strong{display:block;font-size:15px;margin-bottom:6px}
+.executive-summary-box p{margin:0;color:#bdcbe0;font-size:11px;line-height:1.5}
+.dashboard-actions button{
+  border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.07);color:#fff;
+  padding:10px 12px;border-radius:9px;font-size:11px;font-weight:850;cursor:pointer
+}
+@media(max-width:950px){
+  .model-flow{grid-template-columns:1fr}.model-arrow{transform:rotate(90deg);height:38px}
+  .model-loop{grid-template-columns:repeat(2,1fr)}
+  .maturity-shell{grid-template-columns:1fr}
+}
+@media(max-width:620px){
+  .exec-model-top{grid-template-columns:1fr}.exec-model-outcome{justify-self:start}
+  .model-loop{grid-template-columns:1fr}.maturity-row{grid-template-columns:110px 1fr 38px}
+}
+@media print{
+  nav,.hero,.proof,.tower-section,.assessment-section,.incident-section,.tool-section,.evidence,#about,footer{display:none!important}
+  .dashboard-section,.operating-model-section,.maturity-section{display:block!important;background:#fff!important;color:#000!important}
+  .dashboard-shell,.exec-model,.radar-card,.maturity-summary{box-shadow:none!important}
+}
+
 </style>
 </head>
 <body>
@@ -156,7 +363,7 @@
   <div class="wrap nav-inner">
     <a class="brand" href="#top">AKASH JAIN<span>.TECH</span></a>
     <div class="nav-links">
-      <a href="#framework">Framework</a><a href="#event-noise-assessment">Assessments</a><a href="#incident-mttr-assessment">MTTR</a><a href="#evidence">Evidence</a><a href="#about">About</a>
+      <a href="#executive-dashboard">Dashboard</a><a href="#operating-model">Operating Model</a><a href="#maturity-radar">Maturity</a><a href="#framework">Framework</a><a href="#event-noise-assessment">Assessments</a><a href="#incident-mttr-assessment">MTTR</a><a href="#evidence">Evidence</a><a href="#about">About</a>
       <a class="nav-cta" href="https://www.linkedin.com/in/akash25j" target="_blank" rel="noopener">Connect on LinkedIn</a>
     </div>
   </div>
@@ -189,6 +396,181 @@
     <div class="proof-item"><strong>10% → 1%</strong><span>failed-change rate reduced through governance and validation controls</span></div>
     <div class="proof-item"><strong>3,500 → 1,500</strong><span>weekly monitoring events after alert rationalisation</span></div>
     <div class="proof-item"><strong>1,000 → 450</strong><span>weekly incidents after self-healing and operational automation</span></div>
+  </div>
+</section>
+
+<section class="dashboard-section" id="executive-dashboard">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-label">Executive synthesis</span>
+      <h2>Operational Resilience Executive Dashboard</h2>
+      <p>A live leadership view combining the Event Noise and Incident &amp; MTTR assessments into one decision-ready operational picture.</p>
+    </div>
+
+    <div class="dashboard-shell">
+      <div class="dashboard-top">
+        <article class="dashboard-score-card">
+          <div class="score-ring" id="exec-score-ring">
+            <div class="score-ring-content">
+              <strong id="exec-score">70</strong>
+              <span>Intervention score</span>
+            </div>
+          </div>
+          <div class="dashboard-score-copy">
+            <small>Combined executive position</small>
+            <h3 id="exec-state">High-priority intervention</h3>
+            <p id="exec-state-copy">Current assumptions indicate material opportunity across event quality and restoration performance.</p>
+            <span class="dashboard-status" id="exec-status">Action recommended</span>
+          </div>
+        </article>
+
+        <article class="dashboard-summary-card">
+          <small>Executive interpretation</small>
+          <h3 id="exec-headline">Prioritise observability and faster diagnosis.</h3>
+          <p id="exec-summary">The current model shows avoidable operational demand alongside a restoration constraint. Address the highest-volume event sources while improving incident context, dependency visibility and recovery decision speed.</p>
+        </article>
+      </div>
+
+      <div class="dashboard-metric-grid">
+        <article class="dashboard-metric"><small>Annual value opportunity</small><strong id="exec-savings">$314,417</strong><span>recoverable operational capacity</span></article>
+        <article class="dashboard-metric"><small>Annual value exposure</small><strong id="exec-exposure">$1,350,000</strong><span>illustrative incident impact</span></article>
+        <article class="dashboard-metric"><small>Primary constraint</small><strong id="exec-constraint">Diagnosis</strong><span>largest MTTR stage</span></article>
+        <article class="dashboard-metric"><small>Addressable demand</small><strong id="exec-addressable">1,348</strong><span>events per week</span></article>
+      </div>
+
+      <div class="dashboard-lower">
+        <article class="dashboard-bars">
+          <h4>Executive control indicators</h4>
+          <div class="dash-bar-row"><span>Event intervention</span><div class="dash-track"><div class="dash-fill" id="exec-noise-bar" style="width:72%"></div></div><b class="dash-value" id="exec-noise-value">72</b></div>
+          <div class="dash-bar-row"><span>MTTR intervention</span><div class="dash-track"><div class="dash-fill" id="exec-mttr-bar" style="width:68%"></div></div><b class="dash-value" id="exec-mttr-value">68</b></div>
+          <div class="dash-bar-row"><span>Signal quality</span><div class="dash-track"><div class="dash-fill" id="exec-signal-bar" style="width:30%"></div></div><b class="dash-value" id="exec-signal-value">30%</b></div>
+          <div class="dash-bar-row"><span>Target recovery gap</span><div class="dash-track"><div class="dash-fill" id="exec-gap-bar" style="width:33%"></div></div><b class="dash-value" id="exec-gap-value">33%</b></div>
+        </article>
+
+        <article class="dashboard-recommendation">
+          <small>Highest-priority action</small>
+          <h4 id="exec-recommendation-title">Fund observability and diagnosis acceleration</h4>
+          <p id="exec-recommendation-copy">Enrich alerts with business-service, dependency and recent-change context; rationalise noisy sources; and engineer repeatable recovery actions before adding operational headcount.</p>
+          <div class="dashboard-actions">
+            <a href="#event-noise-assessment">Review event demand</a>
+            <a class="secondary" href="#incident-mttr-assessment">Review MTTR</a><button type="button" id="executive-export">Download executive report</button>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="operating-model-section" id="operating-model">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-label">Executive diagram 02</span>
+      <h2>Operational Resilience Value System</h2>
+      <p>A leadership operating model showing how customer outcomes, technology operations and control mechanisms combine to produce measurable resilience.</p>
+    </div>
+
+    <div class="exec-model">
+      <div class="exec-model-top">
+        <div><small>Operating model objective</small><h3>Convert technical operations into protected business outcomes</h3><p>Decision rights, telemetry, engineering and governance working as one value system.</p></div>
+        <span class="exec-model-outcome">Customer impact ↓ · Recovery confidence ↑</span>
+      </div>
+
+      <div class="model-flow">
+        <div class="model-column">
+          <h4>1. Business intent</h4>
+          <div class="model-item"><b>Important business services</b><span>Define what must remain within tolerance.</span></div>
+          <div class="model-item"><b>Customer journeys</b><span>Measure availability, failure and abandonment.</span></div>
+          <div class="model-item"><b>Risk appetite</b><span>Set thresholds for intervention and acceptance.</span></div>
+        </div>
+
+        <div class="model-arrow">→</div>
+
+        <div class="model-column">
+          <h4>2. Operational control</h4>
+          <div class="model-item"><b>Observability</b><span>Detect service and customer impact early.</span></div>
+          <div class="model-item"><b>Incident command</b><span>Mobilise ownership, decisions and recovery.</span></div>
+          <div class="model-item"><b>Problem &amp; change</b><span>Remove recurrence and prevent disruption.</span></div>
+          <div class="model-item"><b>Automation</b><span>Execute bounded and reversible actions.</span></div>
+        </div>
+
+        <div class="model-arrow">→</div>
+
+        <div class="model-column">
+          <h4>3. Executive outcomes</h4>
+          <div class="model-item"><b>Lower customer disruption</b><span>Reduce affected journeys and duration.</span></div>
+          <div class="model-item"><b>Recovered capacity</b><span>Remove avoidable operational demand.</span></div>
+          <div class="model-item"><b>Evidence-led investment</b><span>Fund the largest constraint and exposure.</span></div>
+          <div class="model-item"><b>Proven resilience</b><span>Demonstrate recovery against tolerance.</span></div>
+        </div>
+      </div>
+
+      <div class="model-loop">
+        <div class="loop-item"><small>Measure</small><b>Business and service health</b></div>
+        <div class="loop-item"><small>Decide</small><b>Intervene, fund or accept</b></div>
+        <div class="loop-item"><small>Engineer</small><b>Automate and remove failure</b></div>
+        <div class="loop-item"><small>Assure</small><b>Test evidence and readiness</b></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="maturity-section" id="maturity-radar">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-label">Executive synthesis 02</span>
+      <h2>Operational Maturity Radar</h2>
+      <p>A live capability profile derived from the current assessment inputs. It is an executive prompt for prioritisation rather than a formal maturity certification.</p>
+    </div>
+
+    <div class="maturity-shell">
+      <div class="radar-card">
+        <div class="radar-wrap">
+          <svg viewBox="0 0 500 500" role="img" aria-label="Operational maturity radar chart">
+            <polygon class="radar-grid" points="250,55 419,152 419,348 250,445 81,348 81,152"></polygon>
+            <polygon class="radar-grid" points="250,94 385,172 385,328 250,406 115,328 115,172"></polygon>
+            <polygon class="radar-grid" points="250,133 351,191 351,309 250,367 149,309 149,191"></polygon>
+            <polygon class="radar-grid" points="250,172 318,211 318,289 250,328 182,289 182,211"></polygon>
+            <polygon class="radar-grid" points="250,211 284,230 284,270 250,289 216,270 216,230"></polygon>
+
+            <line class="radar-axis" x1="250" y1="250" x2="250" y2="55"></line>
+            <line class="radar-axis" x1="250" y1="250" x2="419" y2="152"></line>
+            <line class="radar-axis" x1="250" y1="250" x2="419" y2="348"></line>
+            <line class="radar-axis" x1="250" y1="250" x2="250" y2="445"></line>
+            <line class="radar-axis" x1="250" y1="250" x2="81" y2="348"></line>
+            <line class="radar-axis" x1="250" y1="250" x2="81" y2="152"></line>
+
+            <polygon class="radar-shape" id="maturity-polygon" points="250,105 370,181 365,316 250,372 132,318 145,189"></polygon>
+            <g id="maturity-dots"></g>
+
+            <text class="radar-label" x="250" y="35" text-anchor="middle">Observability</text>
+            <text class="radar-label" x="438" y="145" text-anchor="start">Incident</text>
+            <text class="radar-label" x="438" y="365" text-anchor="start">Problem</text>
+            <text class="radar-label" x="250" y="475" text-anchor="middle">Change</text>
+            <text class="radar-label" x="62" y="365" text-anchor="end">Resilience</text>
+            <text class="radar-label" x="62" y="145" text-anchor="end">Automation</text>
+          </svg>
+        </div>
+      </div>
+
+      <div class="maturity-summary">
+        <h3 id="maturity-state">Developing operational maturity</h3>
+        <p id="maturity-copy">The current profile shows strong foundations with targeted gaps in event quality and restoration performance.</p>
+        <div class="maturity-list">
+          <div class="maturity-row"><span>Observability</span><div class="maturity-track"><div class="maturity-fill" id="mat-observability"></div></div><b id="mat-observability-value">70</b></div>
+          <div class="maturity-row"><span>Incident management</span><div class="maturity-track"><div class="maturity-fill" id="mat-incident"></div></div><b id="mat-incident-value">68</b></div>
+          <div class="maturity-row"><span>Problem management</span><div class="maturity-track"><div class="maturity-fill" id="mat-problem"></div></div><b id="mat-problem-value">62</b></div>
+          <div class="maturity-row"><span>Change management</span><div class="maturity-track"><div class="maturity-fill" id="mat-change"></div></div><b id="mat-change-value">74</b></div>
+          <div class="maturity-row"><span>Resilience readiness</span><div class="maturity-track"><div class="maturity-fill" id="mat-resilience"></div></div><b id="mat-resilience-value">66</b></div>
+          <div class="maturity-row"><span>Automation</span><div class="maturity-track"><div class="maturity-fill" id="mat-automation"></div></div><b id="mat-automation-value">55</b></div>
+        </div>
+        <div class="executive-summary-box">
+          <small>Executive recommendation</small>
+          <strong id="maturity-recommendation">Prioritise signal quality and diagnosis acceleration.</strong>
+          <p id="maturity-recommendation-copy">Improve event enrichment, ownership and dependency context while engineering repeatable recovery actions for the most frequent failure modes.</p>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -524,6 +906,250 @@
   $('mttr-reset').addEventListener('click',()=>{Object.entries(defaults).forEach(([k,v])=>$(k).value=v);calc()});
   $('mttr-export').addEventListener('click',()=>{const r=calc(), lines=['OPERATIONAL RESILIENCE STUDIO','Incident Impact & MTTR Assessment','Generated from akashjain.tech','',`MTTR control score: ${r.score}/100`,`Priority: ${r.priority}`,'','TIMELINE',...r.stages.map(x=>`${x[0]}: ${x[1]} minutes`),`Total MTTR: ${r.total} minutes`,`Target MTTR: ${r.target} minutes`,`Primary constraint: ${r.max[0]}`,'','IMPACT',`Customers exposed per incident: ${fmt(r.exposed)}`,`Annual customer exposure: ${fmt(r.annual)}`,`Value exposure per incident: ${money(r.valueIncident)}`,`Annual value exposure: ${money(r.valueAnnual)}`,'','RECOMMENDATIONS',...r.recs.slice(0,4).map((x,i)=>`${i+1}. ${x[0]} — ${x[1]}`),'','Note: Validate assumptions against incident, journey and finance data.']; const blob=new Blob([lines.join('\n')],{type:'text/plain;charset=utf-8'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='incident-mttr-assessment-summary.txt';a.click();URL.revokeObjectURL(a.href)});
   calc();
+})();
+</script>
+
+
+<script>
+(function(){
+  const $=id=>document.getElementById(id);
+  const parseNumber=text=>Number(String(text||'').replace(/[^0-9.-]/g,''))||0;
+  const fmt=n=>Math.round(n).toLocaleString('en-US');
+  const money=n=>'$'+Math.round(n).toLocaleString('en-US');
+
+  function updateExecutiveDashboard(){
+    if(!$('exec-score') || !$('score') || !$('mttr-score')) return;
+
+    const noiseScore=Math.max(0,Math.min(100,parseNumber($('score').textContent)));
+    const mttrScore=Math.max(0,Math.min(100,parseNumber($('mttr-score').textContent)));
+    const combined=Math.round((noiseScore+mttrScore)/2);
+
+    const savings=parseNumber($('savings').textContent);
+    const exposure=parseNumber($('value-annual').textContent);
+    const addressable=parseNumber($('addressable-events').textContent);
+    const actionable=Math.max(0,Math.min(100,parseNumber($('bar-actionable-value').textContent)));
+    const improvement=Math.max(0,Math.min(100,parseNumber($('improvement').textContent)));
+    const constraint=$('constraint').textContent.trim() || 'Diagnosis';
+
+    $('exec-score').textContent=combined;
+    $('exec-score-ring').style.setProperty('--score-deg',(combined*3.6)+'deg');
+    $('exec-savings').textContent=money(savings);
+    $('exec-exposure').textContent=money(exposure);
+    $('exec-constraint').textContent=constraint;
+    $('exec-addressable').textContent=fmt(addressable);
+
+    $('exec-noise-bar').style.width=noiseScore+'%';
+    $('exec-mttr-bar').style.width=mttrScore+'%';
+    $('exec-signal-bar').style.width=actionable+'%';
+    $('exec-gap-bar').style.width=improvement+'%';
+    $('exec-noise-value').textContent=noiseScore;
+    $('exec-mttr-value').textContent=mttrScore;
+    $('exec-signal-value').textContent=Math.round(actionable)+'%';
+    $('exec-gap-value').textContent=Math.round(improvement)+'%';
+
+    let state='Controlled performance';
+    let status='Maintain controls';
+    let copy='Current assumptions indicate a controlled position with targeted improvement opportunities.';
+    if(combined>=75){
+      state='Immediate executive priority';
+      status='Executive action required';
+      copy='Current assumptions indicate significant operational demand, value exposure or restoration weakness requiring funded intervention.';
+    }else if(combined>=55){
+      state='High-priority intervention';
+      status='Action recommended';
+      copy='Current assumptions indicate material opportunity across event quality and restoration performance.';
+    }else if(combined>=35){
+      state='Targeted improvement';
+      status='Focused optimisation';
+      copy='The operating position is broadly controlled, with a small number of measurable constraints to address.';
+    }
+    $('exec-state').textContent=state;
+    $('exec-status').textContent=status;
+    $('exec-state-copy').textContent=copy;
+
+    let title='Strengthen operational control discipline';
+    let recommendation='Maintain stage-level measures, named service ownership and evidence-based optimisation while protecting independent detection and recovery controls.';
+    let headline='Maintain control discipline and target the largest constraint.';
+    let summary='Use the two assessments to focus investment on the most material source of avoidable demand or customer exposure.';
+
+    if(noiseScore>=mttrScore+8){
+      title='Reduce event noise before adding capacity';
+      recommendation='Rationalise the highest-volume sources, improve signal ownership and enrichment, and apply governed suppression or automation with expiry, audit and rollback controls.';
+      headline='Operational demand is the dominant executive issue.';
+      summary='The event assessment is creating the stronger intervention signal. Prioritise monitoring quality, actionable-event ratio and safe automation before increasing operational headcount.';
+    }else if(mttrScore>=noiseScore+8){
+      title='Accelerate '+constraint.toLowerCase()+' and recovery';
+      recommendation='Set stage-level restoration objectives and improve '+constraint.toLowerCase()+' through service ownership, dependency context, recent-change evidence, tested rollback and repeatable recovery actions.';
+      headline=constraint+' is the dominant restoration constraint.';
+      summary='The MTTR assessment is creating the stronger intervention signal. Focus leadership attention on the stage consuming the largest share of customer-impact time.';
+    }else{
+      title='Fund observability and diagnosis acceleration';
+      recommendation='Enrich alerts with business-service, dependency and recent-change context; rationalise noisy sources; and engineer repeatable recovery actions before adding operational headcount.';
+      headline='Prioritise observability and faster diagnosis.';
+      summary='The current model shows avoidable operational demand alongside a restoration constraint. Address the highest-volume event sources while improving incident context, dependency visibility and recovery decision speed.';
+    }
+
+    $('exec-recommendation-title').textContent=title;
+    $('exec-recommendation-copy').textContent=recommendation;
+    $('exec-headline').textContent=headline;
+    $('exec-summary').textContent=summary;
+  }
+
+  ['noise-form','mttr-form'].forEach(id=>{
+    const form=$(id);
+    if(!form) return;
+    form.addEventListener('input',()=>setTimeout(updateExecutiveDashboard,0));
+    form.addEventListener('submit',()=>setTimeout(updateExecutiveDashboard,0));
+  });
+  ['noise-reset','mttr-reset'].forEach(id=>{
+    const btn=$(id);
+    if(btn) btn.addEventListener('click',()=>setTimeout(updateExecutiveDashboard,0));
+  });
+
+  window.addEventListener('load',()=>setTimeout(updateExecutiveDashboard,0));
+  setTimeout(updateExecutiveDashboard,0);
+})();
+</script>
+
+
+<script>
+(function(){
+  const $=id=>document.getElementById(id);
+  const num=id=>Number(String($(id)?.textContent||'').replace(/[^0-9.-]/g,''))||0;
+  const clamp=n=>Math.max(0,Math.min(100,Math.round(n)));
+
+  function radarPoint(value,index){
+    const angle=(-90 + index*60) * Math.PI/180;
+    const radius=195*(value/100);
+    return [250 + Math.cos(angle)*radius,250 + Math.sin(angle)*radius];
+  }
+
+  function updateMaturity(){
+    if(!$('maturity-polygon') || !$('score') || !$('mttr-score')) return;
+    const noiseScore=clamp(num('score'));
+    const mttrScore=clamp(num('mttr-score'));
+    const actionable=clamp(num('bar-actionable-value'));
+    const automationPotential=clamp(Number($('automation')?.value||55));
+    const improvement=clamp(num('improvement'));
+    const totalMttr=Math.max(1,num('total-mttr'));
+    const targetMttr=Math.max(1,Number($('target-mttr')?.value||60));
+
+    const values=[
+      clamp((actionable*0.55)+((100-noiseScore)*0.45)+35),
+      clamp(100-mttrScore+45),
+      clamp(58 + Math.min(25,(Number($('incidents-year')?.value||0)/18)*12)),
+      clamp(74),
+      clamp(72-(improvement*0.35)+(targetMttr/totalMttr)*12),
+      clamp(automationPotential)
+    ];
+
+    const points=values.map((v,i)=>radarPoint(v,i));
+    $('maturity-polygon').setAttribute('points',points.map(p=>p.join(',')).join(' '));
+    $('maturity-dots').innerHTML=points.map(p=>`<circle class="radar-dot" cx="${p[0]}" cy="${p[1]}" r="4"></circle>`).join('');
+
+    const ids=['observability','incident','problem','change','resilience','automation'];
+    values.forEach((v,i)=>{
+      $('mat-'+ids[i]).style.width=v+'%';
+      $('mat-'+ids[i]+'-value').textContent=v;
+    });
+
+    const average=Math.round(values.reduce((a,b)=>a+b,0)/values.length);
+    let state='Developing operational maturity';
+    let copy='The current profile shows strong foundations with targeted gaps in event quality and restoration performance.';
+    if(average>=80){state='Advanced operational maturity';copy='The capability profile is strong and should now focus on assurance, automation safety and sustained evidence.';}
+    else if(average>=65){state='Established operational maturity';copy='Core operational controls are established, with a focused set of improvement opportunities.';}
+    else if(average<50){state='Foundational operational maturity';copy='The current profile indicates multiple capability constraints requiring a sequenced improvement programme.';}
+    $('maturity-state').textContent=state;
+    $('maturity-copy').textContent=copy;
+
+    const minValue=Math.min(...values), minIndex=values.indexOf(minValue);
+    const focusTitles=[
+      'Prioritise signal quality and service context.',
+      'Prioritise incident command and restoration speed.',
+      'Prioritise recurring-cause removal.',
+      'Prioritise production validation and rollback.',
+      'Prioritise recovery testing and dependency assurance.',
+      'Prioritise governed operational automation.'
+    ];
+    const focusCopy=[
+      'Improve event ownership, enrichment and business-service context so teams act on impact rather than raw monitoring volume.',
+      'Set stage-level MTTR objectives and strengthen mobilisation, diagnosis and repeatable recovery actions.',
+      'Rank structural remediation by recurrence, customer exposure and value at risk rather than ticket volume.',
+      'Strengthen pre-production validation, deployment controls and tested rollback for high-risk changes.',
+      'Prove recoverability against service tolerances with dependency maps, scenarios and evidence-based testing.',
+      'Automate bounded, observable and reversible actions with expiry, audit and exception controls.'
+    ];
+    $('maturity-recommendation').textContent=focusTitles[minIndex];
+    $('maturity-recommendation-copy').textContent=focusCopy[minIndex];
+  }
+
+  ['noise-form','mttr-form'].forEach(id=>{
+    const form=$(id);
+    if(form){
+      form.addEventListener('input',()=>setTimeout(updateMaturity,0));
+      form.addEventListener('submit',()=>setTimeout(updateMaturity,0));
+    }
+  });
+  ['noise-reset','mttr-reset'].forEach(id=>{
+    const btn=$(id); if(btn) btn.addEventListener('click',()=>setTimeout(updateMaturity,0));
+  });
+  window.addEventListener('load',()=>setTimeout(updateMaturity,0));
+  setTimeout(updateMaturity,0);
+})();
+
+(function(){
+  const $=id=>document.getElementById(id);
+  const btn=$('executive-export');
+  if(!btn) return;
+  btn.addEventListener('click',()=>{
+    const lines=[
+      'OPERATIONAL RESILIENCE STUDIO',
+      'Executive Operations Report',
+      'Generated from akashjain.tech',
+      '',
+      'EXECUTIVE POSITION',
+      `Combined intervention score: ${$('exec-score').textContent}/100`,
+      `Executive state: ${$('exec-state').textContent}`,
+      `Headline: ${$('exec-headline').textContent}`,
+      `Interpretation: ${$('exec-summary').textContent}`,
+      '',
+      'VALUE AND EXPOSURE',
+      `Annual operational value opportunity: ${$('exec-savings').textContent}`,
+      `Annual incident value exposure: ${$('exec-exposure').textContent}`,
+      `Addressable event demand: ${$('exec-addressable').textContent} per week`,
+      `Primary restoration constraint: ${$('exec-constraint').textContent}`,
+      '',
+      'ASSESSMENT SCORES',
+      `Event intervention score: ${$('exec-noise-value').textContent}/100`,
+      `MTTR intervention score: ${$('exec-mttr-value').textContent}/100`,
+      `Actionable signal ratio: ${$('exec-signal-value').textContent}`,
+      `Recovery target gap: ${$('exec-gap-value').textContent}`,
+      '',
+      'MATURITY PROFILE',
+      `Observability: ${$('mat-observability-value').textContent}/100`,
+      `Incident management: ${$('mat-incident-value').textContent}/100`,
+      `Problem management: ${$('mat-problem-value').textContent}/100`,
+      `Change management: ${$('mat-change-value').textContent}/100`,
+      `Resilience readiness: ${$('mat-resilience-value').textContent}/100`,
+      `Automation: ${$('mat-automation-value').textContent}/100`,
+      '',
+      'EXECUTIVE RECOMMENDATION',
+      $('exec-recommendation-title').textContent,
+      $('exec-recommendation-copy').textContent,
+      '',
+      'MATURITY PRIORITY',
+      $('maturity-recommendation').textContent,
+      $('maturity-recommendation-copy').textContent,
+      '',
+      'Note: This is an illustrative decision-support report. Validate inputs against service, incident, finance and risk data.'
+    ];
+    const blob=new Blob([lines.join('\n')],{type:'text/plain;charset=utf-8'});
+    const a=document.createElement('a');
+    a.href=URL.createObjectURL(blob);
+    a.download='operational-resilience-executive-report.txt';
+    a.click();
+    URL.revokeObjectURL(a.href);
+  });
 })();
 </script>
 
