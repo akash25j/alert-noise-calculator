@@ -119,11 +119,32 @@
     .ai-use{display:grid;grid-template-columns:1fr 1fr;gap:10px}
     .ai-use span{padding:14px;border-radius:13px;border:1px solid rgba(255,255,255,.11);background:rgba(255,255,255,.055);font-size:11px;font-weight:800;color:#d9e3ef}
     .studio{background:#fff}
-    .studio-card{display:grid;grid-template-columns:1.1fr .9fr;gap:30px;align-items:center;border:1px solid var(--line);border-radius:24px;padding:30px;background:linear-gradient(135deg,#f7faff,#eef4fb);box-shadow:var(--shadow)}
-    .studio-card h3{font-size:30px;margin:10px 0 12px}.studio-card p{color:var(--muted);line-height:1.7;font-size:14px}
-    .studio-flow{display:grid;gap:10px}.studio-flow div{display:grid;grid-template-columns:38px 1fr;gap:12px;align-items:center;background:#fff;border:1px solid var(--line);padding:13px;border-radius:14px}
-    .studio-flow i{display:grid;place-items:center;width:34px;height:34px;border-radius:10px;background:#eaf0ff;color:#365ecb;font-style:normal;font-weight:900;font-size:11px}
-    .studio-flow b{display:block;font-size:12px}.studio-flow span{display:block;color:var(--muted);font-size:10px;margin-top:3px}
+    .studio-intro{display:grid;grid-template-columns:1.05fr .95fr;gap:24px;align-items:stretch;margin-bottom:18px}
+    .studio-summary{border:1px solid var(--line);border-radius:24px;padding:30px;background:linear-gradient(135deg,#f7faff,#eef4fb);box-shadow:var(--shadow)}
+    .studio-summary h3{font-size:32px;margin:10px 0 12px}.studio-summary p{color:var(--muted);line-height:1.7;font-size:14px;margin:0}
+    .decision-panel{background:var(--navy);color:#fff;border-radius:24px;padding:27px}
+    .decision-panel small{color:var(--cyan);font-size:9px;font-weight:900;letter-spacing:.1em;text-transform:uppercase}
+    .decision-panel h3{font-size:22px;margin:11px 0 18px}
+    .decision-row{display:grid;grid-template-columns:30px 1fr;gap:11px;padding:12px 0;border-top:1px solid rgba(255,255,255,.1)}
+    .decision-row:first-of-type{border-top:0;padding-top:0}
+    .decision-row i{display:grid;place-items:center;width:28px;height:28px;border-radius:8px;background:rgba(57,210,192,.12);color:var(--cyan);font-style:normal;font-weight:900;font-size:10px}
+    .decision-row b{display:block;font-size:12px;margin-bottom:3px}.decision-row span{display:block;color:#aebdd0;font-size:10px;line-height:1.45}
+    .pow-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+    .pow-card{position:relative;overflow:hidden;border:1px solid var(--line);border-radius:20px;background:#fff;padding:24px;box-shadow:0 14px 38px rgba(7,17,31,.065)}
+    .pow-card:before{content:"";position:absolute;left:0;top:0;width:100%;height:3px;background:linear-gradient(90deg,var(--blue),var(--cyan))}
+    .pow-top{display:flex;justify-content:space-between;gap:14px;align-items:flex-start}
+    .pow-tag{display:inline-block;padding:6px 8px;border-radius:999px;background:#edf2ff;color:#365ecb;font-size:8px;font-weight:900;letter-spacing:.08em;text-transform:uppercase}
+    .pow-index{font-size:11px;font-weight:900;color:#95a3b5}
+    .pow-card h3{font-size:21px;margin:15px 0 9px}.pow-card>p{font-size:12px;line-height:1.6;color:var(--muted);margin:0 0 17px}
+    .pow-detail{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:14px 0;border-top:1px solid var(--line)}
+    .pow-detail b{display:block;font-size:9px;text-transform:uppercase;letter-spacing:.07em;color:#243c5a;margin-bottom:4px}
+    .pow-detail span{display:block;color:var(--muted);font-size:10px;line-height:1.45}
+    .pow-output{margin-top:2px;padding:13px;border-radius:12px;background:var(--soft);font-size:10px;line-height:1.5;color:#40546e}
+    .pow-output strong{color:var(--ink)}
+    .pow-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+    .pow-link{display:inline-flex;align-items:center;justify-content:center;border:1px solid #ccd8e6;border-radius:9px;padding:9px 11px;font-size:10px;font-weight:900;background:#fff;color:#18304f}
+    .pow-link.primary{background:#17365f;border-color:#17365f;color:#fff}
+    .pow-note{margin-top:18px;padding:16px 18px;border-left:3px solid var(--cyan);background:#f5faf9;color:#4f6478;font-size:11px;line-height:1.6}
     .career{background:var(--soft)}
     .timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
     .timeline article{background:#fff;border:1px solid var(--line);border-radius:16px;padding:19px}
@@ -134,14 +155,14 @@
     footer{background:#050c16;color:#8699b1;padding:27px 0}
     .footer{display:flex;justify-content:space-between;gap:20px;font-size:11px}.footer b{color:#fff}
     @media(max-width:980px){
-      .hero-grid,.leadership-grid,.entrepreneur-shell,.ai-grid,.studio-card{grid-template-columns:1fr}
+      .hero-grid,.leadership-grid,.entrepreneur-shell,.ai-grid,.studio-intro{grid-template-columns:1fr}
       .proof-grid{grid-template-columns:repeat(3,1fr)}.proof article:nth-child(3){border-right:0}
       .cards{grid-template-columns:repeat(2,1fr)}.timeline{grid-template-columns:repeat(2,1fr)}
       .profile-card{position:static}.mandate{max-width:680px}
     }
     @media(max-width:720px){
       .menu{display:block}.nav-links{display:none;position:absolute;top:66px;left:18px;right:18px;flex-direction:column;align-items:stretch;background:#0b1a2e;border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:12px}.nav-links.open{display:flex}
-      .proof-grid,.cards,.wins-grid,.principles,.timeline,.ai-use{grid-template-columns:1fr}
+      .proof-grid,.cards,.wins-grid,.principles,.timeline,.ai-use,.pow-grid{grid-template-columns:1fr}
       .proof article{border-right:0;border-bottom:1px solid var(--line)}.proof article:last-child{border-bottom:0}
       .win-grid{grid-template-columns:1fr}.hero{padding:78px 0 70px}section{padding:68px 0}
       .footer{display:block}.footer div+div{margin-top:8px}
@@ -312,23 +333,96 @@
 
   <section class="studio" id="studio">
     <div class="wrap">
-      <div class="studio-card">
-        <div>
-          <span class="label">Proof of work</span>
-          <h3>Operational Resilience Studio</h3>
-          <p>A set of executive diagnostics and operating playbooks designed to make operational risk, incident exposure, change reliability and resilience investment easier to understand.</p>
+      <div class="section-head">
+        <span class="label">Proof of work</span>
+        <h2>Executive tools built around real operational decisions.</h2>
+        <p>The Operational Resilience Studio converts recurring Technology Operations problems into structured assessments, decision views and leadership conversations. Each asset is designed to help leaders move from symptoms and fragmented metrics to a clear intervention.</p>
+      </div>
+
+      <div class="studio-intro">
+        <div class="studio-summary">
+          <span class="label">Operational Resilience Studio</span>
+          <h3>From operational signals to executive action.</h3>
+          <p>This is not a library of generic ITSM templates. It is a developing body of decision-support work shaped by practical experience in incident recovery, change reliability, observability, service risk and production governance.</p>
           <div class="actions">
-            <a class="btn btn-primary" href="#contact">Discuss the Studio</a>
-            <a class="btn" style="border:1px solid #cfd9e6;background:#fff;color:#18304f" href="https://github.com/akash25j/alert-noise-calculator/projects" target="_blank" rel="noopener noreferrer">View proof of work</a>
+            <a class="btn btn-primary" href="https://github.com/akash25j/alert-noise-calculator" target="_blank" rel="noopener noreferrer">Open the Studio repository</a>
+            <a class="btn" style="border:1px solid #cfd9e6;background:#fff;color:#18304f" href="mailto:akash25j@gmail.com?subject=Operational%20Resilience%20Studio">Discuss an application</a>
           </div>
         </div>
-        <div class="studio-flow">
-          <div><i>01</i><div><b>Event Noise & Cost Assessment</b><span>Quantify avoidable operational demand and engineering capacity loss.</span></div></div>
-          <div><i>02</i><div><b>Incident Impact & MTTR Assessment</b><span>Identify recovery constraints and customer or value exposure.</span></div></div>
-          <div><i>03</i><div><b>Change Risk Assessment</b><span>Connect change controls, failure probability and operational readiness.</span></div></div>
-          <div><i>04</i><div><b>Executive Resilience View</b><span>Translate multiple signals into a clear intervention priority.</span></div></div>
-        </div>
+
+        <aside class="decision-panel">
+          <small>What the work demonstrates</small>
+          <h3>Leadership judgement—not only technical execution</h3>
+          <div class="decision-row"><i>01</i><div><b>Business framing</b><span>Connect operational symptoms to customer, financial and capacity impact.</span></div></div>
+          <div class="decision-row"><i>02</i><div><b>Diagnostic discipline</b><span>Separate visible noise from the underlying operating constraint.</span></div></div>
+          <div class="decision-row"><i>03</i><div><b>Investment prioritisation</b><span>Compare interventions using evidence, risk and expected value.</span></div></div>
+          <div class="decision-row"><i>04</i><div><b>Executive communication</b><span>Present complex service evidence in a form leaders can act upon.</span></div></div>
+        </aside>
       </div>
+
+      <div class="pow-grid">
+        <article class="pow-card">
+          <div class="pow-top"><span class="pow-tag">Live diagnostic</span><span class="pow-index">01</span></div>
+          <h3>Event Noise & Operational Cost Assessment</h3>
+          <p>Quantifies how alert volume, duplication and manual handling consume engineering capacity and weaken response quality.</p>
+          <div class="pow-detail">
+            <div><b>Leadership question</b><span>How much avoidable operational demand are we carrying?</span></div>
+            <div><b>Decision supported</b><span>Where should monitoring rationalisation and automation begin?</span></div>
+          </div>
+          <div class="pow-output"><strong>Output:</strong> estimated noise burden, capacity impact, annualised cost exposure and a prioritised improvement case.</div>
+          <div class="pow-actions">
+            <a class="pow-link primary" href="https://github.com/akash25j/alert-noise-calculator" target="_blank" rel="noopener noreferrer">View assessment</a>
+            <a class="pow-link" href="https://github.com/akash25j/alert-noise-calculator/projects" target="_blank" rel="noopener noreferrer">View development board</a>
+          </div>
+        </article>
+
+        <article class="pow-card">
+          <div class="pow-top"><span class="pow-tag">Executive assessment</span><span class="pow-index">02</span></div>
+          <h3>Incident Impact & MTTR Assessment</h3>
+          <p>Frames incident recovery performance around customer exposure, recovery delay, coordination friction and recurring failure demand.</p>
+          <div class="pow-detail">
+            <div><b>Leadership question</b><span>What is structurally slowing recovery during high-impact events?</span></div>
+            <div><b>Decision supported</b><span>Which recovery capability needs investment first?</span></div>
+          </div>
+          <div class="pow-output"><strong>Planned output:</strong> impact profile, recovery constraint map, repeat-demand indicators and intervention priorities.</div>
+          <div class="pow-actions">
+            <a class="pow-link primary" href="mailto:akash25j@gmail.com?subject=Incident%20Impact%20and%20MTTR%20Assessment">Request walkthrough</a>
+            <span class="pow-link" aria-label="Development status">In development</span>
+          </div>
+        </article>
+
+        <article class="pow-card">
+          <div class="pow-top"><span class="pow-tag">Risk decision tool</span><span class="pow-index">03</span></div>
+          <h3>Change Risk & Readiness Assessment</h3>
+          <p>Connects release complexity, service criticality, control strength, rollback readiness and observability coverage into a clearer change decision.</p>
+          <div class="pow-detail">
+            <div><b>Leadership question</b><span>Are we genuinely ready to introduce this change safely?</span></div>
+            <div><b>Decision supported</b><span>Proceed, strengthen controls, alter timing or defer?</span></div>
+          </div>
+          <div class="pow-output"><strong>Planned output:</strong> readiness score, risk drivers, control gaps and required pre-release actions.</div>
+          <div class="pow-actions">
+            <a class="pow-link primary" href="mailto:akash25j@gmail.com?subject=Change%20Risk%20and%20Readiness%20Assessment">Request walkthrough</a>
+            <span class="pow-link" aria-label="Development status">In development</span>
+          </div>
+        </article>
+
+        <article class="pow-card">
+          <div class="pow-top"><span class="pow-tag">Portfolio view</span><span class="pow-index">04</span></div>
+          <h3>Executive Resilience Decision View</h3>
+          <p>Brings incident, change, observability and service-risk indicators into one concise view for leadership prioritisation.</p>
+          <div class="pow-detail">
+            <div><b>Leadership question</b><span>Which service or resilience weakness deserves attention now?</span></div>
+            <div><b>Decision supported</b><span>Where will leadership focus and investment reduce the most exposure?</span></div>
+          </div>
+          <div class="pow-output"><strong>Planned output:</strong> resilience heatmap, decision narrative, ownership view and sequenced improvement roadmap.</div>
+          <div class="pow-actions">
+            <a class="pow-link primary" href="mailto:akash25j@gmail.com?subject=Executive%20Resilience%20Decision%20View">Request walkthrough</a>
+            <span class="pow-link" aria-label="Development status">In development</span>
+          </div>
+        </article>
+      </div>
+
+      <div class="pow-note"><strong>Portfolio transparency:</strong> The Event Noise & Operational Cost Assessment is the current live proof-of-work asset. The remaining assessments are shown as an honest product roadmap and will be linked as working versions are completed.</div>
     </div>
   </section>
 
