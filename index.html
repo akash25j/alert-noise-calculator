@@ -22,7 +22,7 @@ img{max-width:100%}
 .label{display:inline-block;font-size:9px;font-weight:900;letter-spacing:.11em;text-transform:uppercase;color:var(--blue)}
 section{padding:82px 0}
 h1,h2,h3,p{margin-top:0}
-h1{font-size:clamp(44px,7vw,78px);line-height:.98;letter-spacing:-.055em;margin-bottom:20px}
+h1{font-size:clamp(44px,6.4vw,74px);line-height:.99;letter-spacing:-.055em;margin-bottom:20px;max-width:760px}
 h2{font-size:clamp(31px,4.5vw,50px);line-height:1.04;letter-spacing:-.04em;margin:12px 0 16px}
 h3{font-size:20px;line-height:1.18;letter-spacing:-.025em}
 p{line-height:1.65;color:var(--muted)}
@@ -35,28 +35,64 @@ p{line-height:1.65;color:var(--muted)}
 .section-head p{font-size:14px}
 header{
   background:
-    radial-gradient(circle at 82% 20%,rgba(57,210,192,.15),transparent 27%),
+    radial-gradient(circle at 84% 16%,rgba(57,210,192,.12),transparent 30%),
     linear-gradient(145deg,var(--navy),var(--navy2));
-  color:#fff;padding:20px 0 70px
+  color:#fff;padding:0 0 70px
 }
-nav{display:flex;justify-content:space-between;align-items:center;margin-bottom:64px}
-.brand{font-size:12px;font-weight:900;letter-spacing:.09em}.brand span{color:var(--cyan)}
-.navlinks{display:flex;gap:23px;font-size:10px;color:#b9c8d8}.navlinks a:hover{color:#fff}
-.hero{display:grid;grid-template-columns:1.25fr .75fr;gap:45px;align-items:end}
+nav{
+  position:sticky;top:0;z-index:50;
+  display:flex;justify-content:space-between;align-items:center;
+  min-height:72px;margin-bottom:52px;padding:0 2px;
+  background:rgba(7,17,31,.82);backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(255,255,255,.08)
+}
+.brand{font-size:13px;font-weight:900;letter-spacing:.09em}.brand span{color:var(--cyan)}
+.navlinks{display:flex;gap:34px;font-size:12px;font-weight:750;color:#c7d3df}
+.navlinks a{position:relative;padding:26px 0 24px}
+.navlinks a:after{content:"";position:absolute;left:0;right:0;bottom:17px;height:2px;background:var(--cyan);transform:scaleX(0);transform-origin:center;transition:.2s}
+.navlinks a:hover{color:#fff}.navlinks a:hover:after{transform:scaleX(1)}
+.hero{display:grid;grid-template-columns:1.08fr .92fr;gap:54px;align-items:center}
 .hero .label{color:var(--cyan)}
 .hero p{font-size:16px;color:#c0cedd;max-width:760px}
 .hero p + p{font-size:13px;color:#98aabd}
 .hero .actions{margin-top:24px}
 .hero .btn-ghost{background:transparent;color:#fff;border-color:#42617d}
-.hero-panel{border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.06);border-radius:20px;padding:22px;backdrop-filter:blur(8px)}
-.hero-panel small{color:var(--cyan);font-size:8px;text-transform:uppercase;letter-spacing:.1em;font-weight:900}
-.hero-panel strong{display:block;font-size:28px;line-height:1.1;margin:10px 0 7px}
-.hero-panel p{font-size:11px;color:#bfd0df;margin:0}
+.hero-visual{display:grid;gap:16px}
+.metrics-panel{
+  display:grid;grid-template-columns:repeat(2,1fr);gap:12px;
+  border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.055);
+  border-radius:22px;padding:18px;box-shadow:0 26px 70px rgba(0,0,0,.18)
+}
+.metric{
+  border:1px solid rgba(255,255,255,.10);
+  background:rgba(255,255,255,.045);
+  border-radius:14px;padding:15px
+}
+.metric small{display:block;font-size:8px;text-transform:uppercase;letter-spacing:.09em;color:#8fa7bb;font-weight:900}
+.metric strong{display:block;font-size:26px;line-height:1.05;margin:7px 0;color:#fff;letter-spacing:-.03em}
+.metric span{font-size:9px;line-height:1.4;color:#b7c6d4}
+
+.studio-preview{
+  border:1px solid rgba(255,255,255,.14);border-radius:22px;overflow:hidden;
+  background:#f7fafc;box-shadow:0 26px 70px rgba(0,0,0,.22)
+}
+.preview-top{display:flex;justify-content:space-between;align-items:center;padding:12px 14px;background:#0d2037;color:#fff}
+.preview-top b{font-size:10px}.preview-top span{font-size:8px;color:var(--cyan);font-weight:900;text-transform:uppercase;letter-spacing:.08em}
+.preview-body{padding:15px;color:var(--ink)}
+.preview-title{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:12px}
+.preview-title h3{font-size:15px;margin:0}.preview-title em{font-size:8px;font-style:normal;font-weight:900;color:var(--green);background:#e4f7ef;border-radius:999px;padding:5px 7px}
+.preview-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.preview-card{border:1px solid var(--line);border-radius:10px;padding:10px;background:#fff}
+.preview-card small{display:block;font-size:6px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:900}
+.preview-card strong{display:block;font-size:13px;margin-top:5px}
+.preview-footer{display:flex;justify-content:space-between;align-items:center;margin-top:12px;font-size:8px;color:var(--muted)}
+.preview-link{font-weight:900;color:var(--blue)}
 .trust{margin-top:50px;padding-top:20px;border-top:1px solid rgba(255,255,255,.11);font-size:9px;letter-spacing:.08em;color:#9fb0c2}
 
 .snapshot{background:var(--soft)}
 .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px;box-shadow:0 8px 28px rgba(7,17,31,.04)}
+.card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px;box-shadow:0 8px 28px rgba(7,17,31,.04);transition:.22s}
+.card:hover,.case:hover,.quote:hover{transform:translateY(-3px);box-shadow:0 20px 48px rgba(7,17,31,.10)}
 .card-number{display:grid;place-items:center;width:34px;height:34px;border-radius:10px;background:#eaf0ff;color:#365ecb;font-size:10px;font-weight:900;margin-bottom:16px}
 .card p{font-size:11px;margin-bottom:0}
 .career-strip{margin-top:24px;border:1px solid var(--line);background:#fff;border-radius:18px;padding:20px 22px}
@@ -64,7 +100,7 @@ nav{display:flex;justify-content:space-between;align-items:center;margin-bottom:
 .arrow{color:#a7b3c2}
 
 .case-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.case{border:1px solid var(--line);border-radius:20px;padding:22px;background:#fff;box-shadow:var(--shadow)}
+.case{border:1px solid var(--line);border-radius:20px;padding:22px;background:#fff;box-shadow:var(--shadow);transition:.22s}
 .case small{font-size:8px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;color:var(--blue)}
 .case h3{font-size:22px;margin:12px 0 16px}
 .case b{display:block;font-size:9px;text-transform:uppercase;letter-spacing:.06em;margin-bottom:5px}
@@ -96,7 +132,7 @@ nav{display:flex;justify-content:space-between;align-items:center;margin-bottom:
 
 .testimonials{background:#fff}
 .quote-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.quote{border:1px solid var(--line);border-radius:20px;padding:24px;background:var(--soft)}
+.quote{border:1px solid var(--line);border-radius:20px;padding:24px;background:var(--soft);transition:.22s}
 .quote p{font-size:15px;line-height:1.6;color:#26394f;margin-bottom:20px}
 .quote b{display:block;font-size:11px}
 .quote span{font-size:9px;color:var(--muted)}
@@ -115,12 +151,14 @@ footer{background:#050c16;color:#8093aa;padding:24px 0;font-size:9px}
 
 @media(max-width:900px){
   .hero,.studio-grid,.future-grid{grid-template-columns:1fr}
+  nav{position:relative}
+  .hero-visual{max-width:760px}
   .cards,.case-grid{grid-template-columns:1fr 1fr}
   .principles{grid-template-columns:1fr 1fr}
 }
 @media(max-width:620px){
   section{padding:64px 0}
-  nav{align-items:flex-start}.navlinks{display:none}
+  nav{min-height:62px}.navlinks{display:none}
   .cards,.case-grid,.principles,.quote-grid,.tags{grid-template-columns:1fr}
   .contact-shell{grid-template-columns:1fr}
   .footer{display:block}.footer div+div{margin-top:7px}
@@ -160,14 +198,37 @@ footer{background:#050c16;color:#8093aa;padding:24px 0;font-size:9px}
         <p>Known for bringing clarity to complex environments, aligning technical and business teams around measurable outcomes, and leading calmly through high-risk change and service disruption.</p>
         <div class="actions">
           <a class="btn btn-primary" href="#impact">View executive impact</a>
+          <a class="btn btn-ghost" href="#studio">Explore the Studio</a>
           <a class="btn btn-ghost" href="Akash_Jain_Resume.pdf" target="_blank">Download résumé</a>
         </div>
       </div>
-      <aside class="hero-panel">
-        <small>Leadership focus</small>
-        <strong>Reliable services. Clear decisions. Calm execution.</strong>
-        <p>Global banking platforms · Production services · Major incident command · Change governance · Partner ecosystems</p>
-      </aside>
+      <div class="hero-visual">
+        <div class="metrics-panel">
+          <div class="metric"><small>Experience</small><strong>20+</strong><span>Years across enterprise technology operations</span></div>
+          <div class="metric"><small>Customer scale</small><strong>~10M</strong><span>Customers supported through critical conversion</span></div>
+          <div class="metric"><small>Change reliability</small><strong>60%</strong><span>Year-on-year reduction in failed changes</span></div>
+          <div class="metric"><small>Event noise</small><strong>3.5K→1.5K</strong><span>Weekly monitoring events reduced</span></div>
+        </div>
+
+        <a class="studio-preview" href="event-noise-assessment.html" aria-label="Open Event Noise and Operational Cost Assessment">
+          <div class="preview-top"><b>Operational Resilience Studio</b><span>Live assessment</span></div>
+          <div class="preview-body">
+            <div class="preview-title">
+              <h3>Event Noise & Operational Cost Assessment</h3>
+              <em>Live</em>
+            </div>
+            <div class="preview-grid">
+              <div class="preview-card"><small>Annual noise</small><strong>103,740</strong></div>
+              <div class="preview-card"><small>Capacity</small><strong>5,187 hrs</strong></div>
+              <div class="preview-card"><small>Recoverable</small><strong>$144K</strong></div>
+            </div>
+            <div class="preview-footer">
+              <span>Executive decision-support model</span>
+              <span class="preview-link">Open assessment →</span>
+            </div>
+          </div>
+        </a>
+      </div>
     </div>
 
     <div class="trust">20+ YEARS · GLOBAL BANKING · PRODUCTION SERVICES · OPERATIONAL RESILIENCE · EXECUTIVE GOVERNANCE</div>
